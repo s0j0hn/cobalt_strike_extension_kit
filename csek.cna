@@ -32,7 +32,7 @@ foreach $file (@aggressor){
 
 popup beacon_top {
 
-include('/opt/csek/scripts/menuscripts/favorites.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/favorites.cna')
 
 }
 
@@ -53,7 +53,7 @@ include('/opt/csek/scripts/menuscripts/favorites.cna')
 popup beacon_top{
 menu "csek - Initial Access" {
 
-include('/opt/csek/scripts/menuscripts/initialacc.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/initialacc.cna')
 
 }
 }
@@ -67,7 +67,7 @@ include('/opt/csek/scripts/menuscripts/initialacc.cna')
 popup beacon_top{
 menu "csek - Enumeration" {
 
-include('/opt/csek/scripts/menuscripts/enum.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/enum.cna')
 
 }
 }
@@ -81,7 +81,7 @@ include('/opt/csek/scripts/menuscripts/enum.cna')
 popup beacon_top{
 menu "csek - Defense Evasion" {
 
-include('/opt/csek/scripts/menuscripts/defev.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/defev.cna')
 
 }
 }
@@ -96,7 +96,7 @@ include('/opt/csek/scripts/menuscripts/defev.cna')
 popup beacon_top{
 menu "csek - Code Execution" {
 
-include('/opt/csek/scripts/menuscripts/codeexec.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/codeexec.cna')
 
 }
 }
@@ -110,7 +110,7 @@ include('/opt/csek/scripts/menuscripts/codeexec.cna')
 popup beacon_top{
 menu "csek - Lateral Movement" {
 
-include('/opt/csek/scripts/menuscripts/latmove.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/latmove.cna')
 
 }
 }
@@ -124,7 +124,7 @@ include('/opt/csek/scripts/menuscripts/latmove.cna')
 popup beacon_top{
 menu "csek - Privilege Escalation" {
 
-include('/opt/csek/scripts/menuscripts/privesc.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/privesc.cna')
 
 }
 }
@@ -138,7 +138,7 @@ include('/opt/csek/scripts/menuscripts/privesc.cna')
 popup beacon_top{
 menu "csek - Credential Access" {
 
-include('/opt/csek/scripts/menuscripts/credaccess.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/credaccess.cna')
 
 }
 }
@@ -153,7 +153,7 @@ include('/opt/csek/scripts/menuscripts/credaccess.cna')
 popup beacon_top{
 menu "csek - Persistence" {
 
-include('/opt/csek/scripts/menuscripts/persist.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/persist.cna')
 
 }
 }

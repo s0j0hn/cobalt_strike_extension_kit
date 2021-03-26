@@ -1,66 +1,66 @@
-include ('/opt/csek/scripts/credaccess/sharpdump.cna');
-include ('/opt/csek/scripts/credaccess/dumpert.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sharpdump.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/dumpert.cna');
 item "-----CloneVault-----"{}
 
-include ('/opt/csek/scripts/credaccess/cvlistcreds.cna');
-include ('/opt/csek/scripts/credaccess/cvexpcreds.cna');
-include ('/opt/csek/scripts/credaccess/cvexpallcreds.cna');
-include ('/opt/csek/scripts/credaccess/cvimportcreds.cna');
-include ('/opt/csek/scripts/credaccess/cvimportcredfile.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/cvlistcreds.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/cvexpcreds.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/cvexpallcreds.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/cvimportcreds.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/cvimportcredfile.cna');
 
 item "-----Rubeus-----"{}
-include ('/opt/csek/scripts/credaccess/rub_fullkerb.cna');
-include ('/opt/csek/scripts/credaccess/rub_kerbadmin.cna');
-include ('/opt/csek/scripts/credaccess/rub_kerbadsi.cna');
-include ('/opt/csek/scripts/credaccess/rub_kerboldpass.cna');
-include ('/opt/csek/scripts/credaccess/rub_kerbsingleuser.cna');
-include ('/opt/csek/scripts/credaccess/rub_aspreproast.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_fullkerb.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerbadmin.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerbadsi.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerboldpass.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerbsingleuser.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_aspreproast.cna');
 
 item "-----Mimikatz-----"{}
 menu "Mimikatz"{
-include ('/opt/csek/scripts/credaccess/mimi_logonpass.cna');
-include ('/opt/csek/scripts/credaccess/mimi_wdigest.cna');
-include ('/opt/csek/scripts/credaccess/mimi_kerbcreds.cna');
-include ('/opt/csek/scripts/credaccess/mimi_lmntlmpass.cna');
-include ('/opt/csek/scripts/credaccess/mimi_tspkg.cna');
-include ('/opt/csek/scripts/credaccess/mimi_livessppass.cna');
-include ('/opt/csek/scripts/credaccess/mimi_ssppass.cna');
-include ('/opt/csek/scripts/credaccess/mimi_dumptrust.cna');
-include ('/opt/csek/scripts/credaccess/mimi_backupkeys.cna');
-include ('/opt/csek/scripts/credaccess/mimi_tickets.cna');
-include ('/opt/csek/scripts/credaccess/mimi_ekeys.cna');
-include ('/opt/csek/scripts/credaccess/mimi_dpapi.cna');
-include ('/opt/csek/scripts/credaccess/mimi_dpapisystemsecret.cna');
-include ('/opt/csek/scripts/credaccess/mimi_credman.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_logonpass.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_wdigest.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_kerbcreds.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_lmntlmpass.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_tspkg.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_livessppass.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_ssppass.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_dumptrust.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_backupkeys.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_tickets.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_ekeys.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_dpapi.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_dpapisystemsecret.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/mimi_credman.cna');
 }
 
 item "-----SharpKatz-----"{}
 menu "SharpKatz"{
 
-include ('/opt/csek/scripts/credaccess/sk_debugprivs.cna');
-include ('/opt/csek/scripts/credaccess/sk_wdigest.cna');
-include ('/opt/csek/scripts/credaccess/sk_kerb.cna');
-include ('/opt/csek/scripts/credaccess/sk_msvlmntlm.cna');
-include ('/opt/csek/scripts/credaccess/sk_tspkg.cna');
-include ('/opt/csek/scripts/credaccess/sk_ekeys.cna');
-include ('/opt/csek/scripts/credaccess/sk_credman.cna');
-include ('/opt/csek/scripts/credaccess/sk_dumpusername.cna');
-include ('/opt/csek/scripts/credaccess/sk_dumpguid.cna');
-include ('/opt/csek/scripts/credaccess/sk_dumpad.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_debugprivs.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_wdigest.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_kerb.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_msvlmntlm.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_tspkg.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_ekeys.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_credman.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_dumpusername.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_dumpguid.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sk_dumpad.cna');
 }
 item "-----Extracting Web Credentials-----"{}
 
-include ('/opt/csek/scripts/credaccess/wce_retrievecookies.cna');
-include ('/opt/csek/scripts/credaccess/wce_browsercookies.cna');
-include ('/opt/csek/scripts/credaccess/wce_usershistory.cna');
-include ('/opt/csek/scripts/credaccess/wce_loginpass.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/wce_retrievecookies.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/wce_browsercookies.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/wce_usershistory.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/wce_loginpass.cna');
 
 item "-----SharpWeb-----"{}
 
-include ('/opt/csek/scripts/credaccess/sw_all.cna');
-include ('/opt/csek/scripts/credaccess/sw_chrome.cna');
-include ('/opt/csek/scripts/credaccess/sw_edge.cna');
-include ('/opt/csek/scripts/credaccess/sw_firefox.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sw_all.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sw_chrome.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sw_edge.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sw_firefox.cna');
 
 
 

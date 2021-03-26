@@ -1,6 +1,6 @@
-include('/opt/csek/scripts/codeexec/winrm.cna');
-include('/opt/csek/scripts/codeexec/smbexec.cna');
-include('/opt/csek/scripts/codeexec/urbanbish.cna');
-include('/opt/csek/scripts/codeexec/dcomlat.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/codeexec/winrm.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/codeexec/smbexec.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/codeexec/urbanbish.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/codeexec/dcomlat.cna');
 item "                 ----- Custom Process Injection -----"{}
-include('/opt/csek/scripts/codeexec/rpi.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/codeexec/rpi.cna');

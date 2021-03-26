@@ -1,9 +1,9 @@
-include('/opt/csek/scripts/defev/edrcheck.cna');
-include('/opt/csek/scripts/defev/avquery.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/edrcheck.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/avquery.cna');
 item "                 ----- MimiKatz Process Manipulation -----"{}
-include('/opt/csek/scripts/defev/mimiprocmanip.cna');
-include('/opt/csek/scripts/defev/blocketw.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/mimiprocmanip.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/blocketw.cna');
 item "                 ----- CleanMRU -----"{}
-include('/opt/csek/scripts/defev/cleanmru.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/cleanmru.cna');
 item "                 ----- ShhMon -----"{}
-include('/opt/csek/scripts/defev/shhmon.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/shhmon.cna');

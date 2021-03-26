@@ -1,118 +1,118 @@
-include('/opt/csek/scripts/enum/scout.cna');
-include('/opt/csek/scripts/enum/seatbelt.cna');
-include('/opt/csek/scripts/enum/sitrep.cna');
-include('/opt/csek/scripts/enum/saBOF.cna');
-include('/opt/csek/scripts/enum/phishua.cna');
-include('/opt/csek/scripts/enum/phishcust.cna');
-include('/opt/csek/scripts/enum/phishlock.cna');
-include('/opt/csek/scripts/enum/wmiremproc.cna');
-include('/opt/csek/scripts/enum/wmiproc.cna');
-include('/opt/csek/scripts/enum/mimiproc.cna');
-include('/opt/csek/scripts/enum/psx.cna');
-include('/opt/csek/scripts/enum/psm.cna');
-include('/opt/csek/scripts/enum/psw.cna');
-include('/opt/csek/scripts/enum/psk.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/scout.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/seatbelt.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/sitrep.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/saBOF.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/phishua.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/phishcust.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/phishlock.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/mimiproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/psx.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/psm.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/psw.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/psk.cna');
 
 menu "Domain Enumeration"{
 
-include('/opt/csek/scripts/enum/foresttrust.cna');
-include('/opt/csek/scripts/enum/listadmins.cna');
-include('/opt/csek/scripts/enum/listdomain.cna');
-include('/opt/csek/scripts/enum/listdomainsid.cna');
-include('/opt/csek/scripts/enum/listdomfor.cna');
-include('/opt/csek/scripts/enum/listdomtrust.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/foresttrust.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listadmins.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomain.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomainsid.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomfor.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomtrust.cna');
 
 }
 
 menu "Domain User Enumeration"{}
 
-include('/opt/csek/scripts/enum/localadmin.cna');
-include('/opt/csek/scripts/enum/userlocmachname.cna');
-include('/opt/csek/scripts/enum/userlocusername.cna');
-include('/opt/csek/scripts/enum/userlocmachuser.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/localadmin.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocmachname.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocusername.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocmachuser.cna');
 
 item "                 ----- Domain Computer Object Enumeration -----"{}
 
-include('/opt/csek/scripts/enum/listcomps.cna');
-include('/opt/csek/scripts/enum/listcompsdom.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listcomps.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listcompsdom.cna');
 
 item "                 ----- Domain Group Enumeration -----"{}
 
-include('/opt/csek/scripts/enum/listgroups.cna');
-include('/opt/csek/scripts/enum/entadmingroup.cna');
-include('/opt/csek/scripts/enum/domadmingroup.cna');
-include('/opt/csek/scripts/enum/admingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listgroups.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/entadmingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/domadmingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/admingroup.cna');
 
 item "                 ----- ADSearch -----"{}
 
-include('/opt/csek/scripts/enum/adslistgroups.cna');
-include('/opt/csek/scripts/enum/adslistusers.cna');
-include('/opt/csek/scripts/enum/adslistspns.cna');
-include('/opt/csek/scripts/enum/adslistdomadm.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistgroups.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistusers.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistspns.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistdomadm.cna');
 
 item "                 ----- Remote WMI Enumeration -----"{}
 
-include('/opt/csek/scripts/enum/wmiremoteproc.cna');
-include('/opt/csek/scripts/enum/wmiremoteserv.cna');
-include('/opt/csek/scripts/enum/wmiremoteav.cna');
-include('/opt/csek/scripts/enum/wmiremoteavaltcreds.cna');
-include('/opt/csek/scripts/enum/wmilogonevents.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteserv.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteav.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteavaltcreds.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmilogonevents.cna');
 
 menu "File And Share Enumeration"{
 
-include('/opt/csek/scripts/enum/fsdom.cna');
-include('/opt/csek/scripts/enum/fsuserenum.cna');
-include('/opt/csek/scripts/enum/fsuserenumdc.cna');
-include('/opt/csek/scripts/enum/fsuserenumdom.cna');
-include('/opt/csek/scripts/enum/sharpshares.cna');
-include('/opt/csek/scripts/enum/sharpsharesnotopsec.cna');
-include('/opt/csek/scripts/enum/sharpfilesnotopsec.cna');
-include('/opt/csek/scripts/enum/cloudcreds.cna');
-include('/opt/csek/scripts/enum/domainshares.cna');
-include('/opt/csek/scripts/enum/interestingdomainshares.cna');
-include('/opt/csek/scripts/enum/fileservers.cna');
-include('/opt/csek/scripts/enum/sharpdircustom.cna');
-include('/opt/csek/scripts/enum/getnetfileserver.cna');
-include('/opt/csek/scripts/enum/locklessfindfilesandhandles.cna');
-include('/opt/csek/scripts/enum/locklesshandlesforfile.cna');
-include('/opt/csek/scripts/enum/locklesscopyfile.cna');
-include('/opt/csek/scripts/enum/locklesslockedfilefilename.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/fsdom.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/fsuserenum.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/fsuserenumdc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/fsuserenumdom.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/sharpshares.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/sharpsharesnotopsec.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/sharpfilesnotopsec.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/cloudcreds.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/domainshares.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/interestingdomainshares.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/fileservers.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/sharpdircustom.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/getnetfileserver.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/locklessfindfilesandhandles.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/locklesshandlesforfile.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/locklesscopyfile.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/locklesslockedfilefilename.cna');
 
 }
 
 menu "Mimikatz: Token Enumeration"{
 
-include('/opt/csek/scripts/enum/tokenlist.cna');
-include('/opt/csek/scripts/enum/listadmintokens.cna');
-include('/opt/csek/scripts/enum/listdatokens.cna');
-include('/opt/csek/scripts/enum/listeatokens.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/tokenlist.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listadmintokens.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdatokens.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listeatokens.cna');
 
 }
 
 
-include('/opt/csek/scripts/enum/clipboardstealer.cna');
-include('/opt/csek/scripts/enum/emailkeyword.cna');
-include('/opt/csek/scripts/enum/screenshots.cna');
-include('/opt/csek/scripts/enum/regsb.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/clipboardstealer.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/emailkeyword.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/screenshots.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/regsb.cna');
 
 menu "Mimikatz: Token Enumeration"{
 
-include('/opt/csek/scripts/enum/listproc.cna');
-include('/opt/csek/scripts/enum/getwmiproc.cna');
-include('/opt/csek/scripts/enum/getremwmiproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/getwmiproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/getremwmiproc.cna');
 
 }
 
-include('/opt/csek/scripts/enum/serviceenumlocal.cna');
-include('/opt/csek/scripts/enum/serviceenumremote.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/serviceenumlocal.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/serviceenumremote.cna');
 
 menu "PowerUpSQL"{
 
-include('/opt/csek/scripts/enum/initpowerupsql.cna');
-include('/opt/csek/scripts/enum/disclocalsql.cna');
-include('/opt/csek/scripts/enum/discdomsqlinfo.cna');
-include('/opt/csek/scripts/enum/discsqlavail.cna');
-include('/opt/csek/scripts/enum/enumdatabaselinks.cna');
-include('/opt/csek/scripts/enum/remservlinks.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/initpowerupsql.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/disclocalsql.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/discdomsqlinfo.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/discsqlavail.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/enumdatabaselinks.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/remservlinks.cna');
 
 }
