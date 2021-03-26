@@ -1,0 +1,9 @@
+# SharpRDPHijack Hijack Remote Desktop session with user's password
+item "Hijack Session w/user password"{
+	local ('$bid');
+		foreach $bid ($1){
+			rdppass($bid);
+		}
+		
+		
+#Need To Add

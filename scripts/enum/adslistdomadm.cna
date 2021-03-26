@@ -1,0 +1,13 @@
+item "List Domain Admins"{
+
+    local('$bid');
+        foreach $bid ($1){
+            adsearchlistdomainadmins($bid);
+      }
+    }  #End Item 
+
+
+sub adsearchlistdomainadmins{
+bexecute_assembly($1, script_resource('/exe/ADSearch.exe'), "--domain-admins");
+}
+ 

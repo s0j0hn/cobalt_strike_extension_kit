@@ -1,0 +1,27 @@
+#PSM - Shows Detailed Information from a specific process id
+item "PSM - Specified PID Information - T1057"{
+	local ('$bid');
+		foreach $bid ($1){
+			getpsm($bid);
+		}
+	}	
+
+
+#PSM - Shows Detailed Information from a specific process id
+sub getpsm{
+ $bid = $1;
+    $dialog = dialog("Show Detailed Information From A Specific Process ID", %(pid => "", arc => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "$3['pid'] $3['arc']";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Finding Process Information....');
+            fireAlias($bid, "psm", $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Custom Cred Phisher Prompt");
+    drow_text($dialog, "pid",  "Please Enter A Process ID:");
+    drow_combobox($dialog, "arc",  "Please Select The Proper Architecture:", @("x64", "x86"));
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}

@@ -1,0 +1,11 @@
+item "Misc: Get Running Services  - T1007"{
+				local('$bid');
+				foreach $bid ($1){
+					binput($bid, "StayKit get running services");
+					blog2($bid, "" . dstamp(ticks()) . " - Showing running services via SharpStay");
+					bexecute_assembly!($bid, $sharppersist, "action=listrunningservices");
+				}
+			}
+			
+			
+			

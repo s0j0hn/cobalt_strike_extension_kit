@@ -1,0 +1,13 @@
+#PowerUpSQL Discover Domain SQL Servers - Check Availability
+item "Discover Domain SQL Server Availability"{
+		local('$bid');
+				foreach $bid ($1){
+					psqldiscdomcheck($bid);
+				}
+			}
+
+
+#PowerUpSQL Discover Domain SQL Servers - Check Availability
+sub psqldiscdomcheck{
+bpowerpick($1, "Get-SQLInstanceDomain | Get-SQLConnectionTestThreaded -Verbose");
+}

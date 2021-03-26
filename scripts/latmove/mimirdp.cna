@@ -1,0 +1,15 @@
+# Mimikatz TS::Sessions
+item "MimiKatz RDP Sessions - T1563"{
+	local ('$bid');
+		foreach $bid ($1){
+			mimisess($bid);
+		}
+}
+
+
+
+
+# MimiKatz TS::Sessions
+sub mimisess{
+bmimikatz($1, "ts::sessions");
+}

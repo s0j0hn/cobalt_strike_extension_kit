@@ -1,0 +1,24 @@
+#################################################
+
+#   CertKatz
+
+#################################################
+#Run CertKatz
+item "Run CertKatz  - T1134"{
+	local('$bid');
+		foreach $bid ($1){
+			certkatz($bid);
+		}
+	}
+	
+	
+	
+#################################################
+
+#   CertKatz
+
+#################################################
+#CertKatz
+sub certkatz{
+bexecute_assembly($1, script_resource('exe/CertKatz.exe'));
+}

@@ -1,0 +1,12 @@
+		item "Administrator"{
+			local('$bid');
+				foreach $bid ($1){
+					getnetgroupadministrator($bid);
+				}
+			}
+
+
+# SharpView list Administrators group
+sub getnetgroupadministrator{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), 'Get-NetGroup -Identity "Administrators" -Recursive');
+}			

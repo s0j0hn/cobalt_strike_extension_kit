@@ -1,0 +1,30 @@
+#Get Domain Security Identifier (SID) (SharpView)
+item "List Domain SID (SharpView)"{
+	local('$bid');
+		foreach $bid ($1){
+			getdomainsid($bid);
+			}
+		}
+
+#Get Domain Security Identifier (SID)
+item "List Domain SID (Specify Domain) (SharpView)"{
+	local('$bid');
+		foreach $bid ($1){
+			getdomainsidspec($bid);
+			}
+		}
+
+
+
+
+# SharpView get current domain's SID
+sub getdomainsid{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-DomainSID");
+}
+
+# SharpView get specified domain's SID
+sub getdomainsidspec{
+prompt_text("Please Specify Domain", "", lambda({
+bexecute_assembly($bids, script_resource('../exe/SharpView.exe'), "Get-DomainSID -Domain $1");
+}, $bids => $1));
+}

@@ -1,0 +1,13 @@
+#PSX - Detailed List of Running Processes
+item "PSX - Running Processes  - T1057"{
+	local ('$bid');
+		foreach $bid ($1){
+			getpsx($bid);
+		}
+	}
+
+
+#PSX - Detailed List of Running Processes
+sub getpsx{
+fireAlias($1, "psx");
+}

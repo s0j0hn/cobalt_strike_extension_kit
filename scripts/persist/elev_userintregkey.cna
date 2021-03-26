@@ -1,0 +1,36 @@
+item "Elevated: UserInit Registry Key"{
+				local('$bid');
+				foreach $bid ($1){
+					&elevateduserinitregistrydialog($bid);
+				}
+			}
+			
+sub elevateduserinitregistrydialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "elevateduserinitkey";
+
+	%defaults["command"] = %persistdefaults["command"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+
+	$dialog = dialog("Elevated: Registry UserInit Key Persistence", %defaults, lambda({
+		if($2 eq "Help"){
+			&eleuserinitregistryhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Elevated: Create new registry UserInit key");
+	drow_text($dialog, "command", "Command: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", " Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}

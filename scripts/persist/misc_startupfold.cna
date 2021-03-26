@@ -1,0 +1,36 @@
+item "Misc: Startup Folder"{
+				local('$bid');
+				foreach $bid ($1){
+					&startupfolderdialog($bid);
+				}
+			}
+			
+sub startupfolderdialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "startupfolder";
+
+	%defaults["filename"] = "";
+	%defaults["startuppath"]  = "%APPDATA%";
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	
+	$dialog = dialog("Misc: Startup Folder", %defaults, lambda({
+		if($2 eq "Help"){
+			&miscstartupfolderhelp();
+			break;
+		}
+		&startupdir($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Misc: Startup Folder either %PROGRAMDATA% for all users or %APPDATA% for current user");
+	drow_text($dialog, "filename", "Filename: ");
+	drow_combobox($dialog, "startuppath", "Startup Directory: ", @("%APPDATA%", "%PROGRAMDATA%"));
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template File: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", "Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}			

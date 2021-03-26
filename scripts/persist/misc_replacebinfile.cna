@@ -1,0 +1,37 @@
+item "Misc: Replace Binary/File"{
+				local('$bid');
+				foreach $bid ($1){
+					&replacefiledialog($bid);
+				}
+			}
+			
+sub replacefiledialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "replacefile";
+
+	%defaults["droplocation"]  = %persistdefaults["droplocation"];
+	%defaults["action"] = "";
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["cleanup"] = "false";
+
+	$dialog = dialog("Misc: Replace file", %defaults, lambda({
+		if($2 eq "Help"){
+			&miscreplacefilehelp();
+			break;
+		}
+		&replacefile($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Misc: Replaces file on disk with selected file");
+	drow_text($dialog, "droplocation", "File Path: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template: ");
+	drow_combobox($dialog, "action", "Action: ", @("Download and remove", "Append .bak to name", "Append random characters to name"));
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", " Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}			

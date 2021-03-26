@@ -1,0 +1,16 @@
+# Enumerate Remote Services
+item "Service Enumeration - Remote Computer - T1046"{
+
+    local('$bid');
+        foreach $bid ($1){
+            getremoteservices($bid);
+      }
+   }
+
+
+# View Remote Services
+sub getremoteservices{
+prompt_text("Remote Machine - (FQDN)", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/AtYourService.exe'), "$1");
+}, $bids => $1));
+}

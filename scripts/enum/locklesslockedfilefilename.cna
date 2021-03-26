@@ -1,0 +1,25 @@
+item "Copy Locked File By Filename - T1135"{
+    local('$bid');
+        foreach $bid ($1){
+            locklesscopy($bid);
+      }
+   }   
+
+sub locklesscopy{
+ $bid = $1;
+    $dialog = dialog("LockLess: Copy Locked File By FileName", %(file => "", dest => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "$3['file'] /copy:$3['dest']";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Copying File....');
+            bexecute_assembly($bid, script_resource('exe/LockLess.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Copy Locked File By FileName");
+    drow_text($dialog, "file",  "Please Enter A FileName:");
+    drow_text($dialog, "dest",  "Please Enter The Destination To Copy The File:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}    
+ 

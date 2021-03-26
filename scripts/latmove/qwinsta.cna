@@ -1,0 +1,30 @@
+# qwinsta local
+item "qwinsta (local) - T1563"{
+	local ('$bid');
+		foreach $bid ($1){
+			qwinstaloc($bid);
+		}
+}
+
+
+# qwinsta remote
+item "qwinsta (remote) - T1563"{
+	local ('$bid');
+		foreach $bid ($1){
+			qwinstarem($bid);
+		}
+}
+
+
+
+# qwinsta local
+sub qwinstaloc{
+brun($1, "qwinsta");
+}
+
+# qwinsta local
+sub qwinstarem{ 
+prompt_text("Server Name:", "", lambda({ 
+brun($bids, "qwinsta /server:$1"); 
+}, $bids => $1)); 
+}

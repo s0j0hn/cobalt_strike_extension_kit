@@ -1,0 +1,15 @@
+#PowerUpSQL Find Links To Remote Servers			
+item "Find Links To Remote Servers"{
+		local('$bid');
+				foreach $bid ($1){
+					psqlfindrem($bid);
+				}
+			}
+
+
+#PowerUpSQL Find Links To Remote Servers	
+sub psqlfindrem{
+prompt_text("Server Instance", "", lambda({
+bpowerpick($bids, "Get-SQLServerLink -Instance $1 -Verbose");
+}, $bids => $1));
+}

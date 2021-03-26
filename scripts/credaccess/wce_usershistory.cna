@@ -1,0 +1,10 @@
+item "List User's History"{
+			local('$bid');
+				foreach $bid ($1){
+					sharphistory($bid);
+				}
+			}
+
+sub sharphistory{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "history");
+}

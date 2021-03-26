@@ -1,0 +1,14 @@
+ #EDR Checker https://github.com/PwnDexter/SharpEDRChecker
+item "Sharp EDR Checker"{
+
+    local('$bid');
+        foreach $bid ($1){
+            sharpedrchecker($bid);
+      }
+
+    } #End of Item
+    
+#EDR Checker function from https://github.com/PwnDexter/SharpEDRChecker
+sub sharpedrchecker{
+bexecute_assembly($1, script_resource('/exe/SharpEDRChecker.exe'));
+}

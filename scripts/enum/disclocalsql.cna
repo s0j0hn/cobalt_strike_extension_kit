@@ -1,0 +1,12 @@
+#Discover Local SQL Server Instances
+item "Discover Local SQL Server Instances"{
+		local('$bid');
+				foreach $bid ($1){
+					psqldiscloc($bid);
+				}
+			}
+
+#PowerUpSQL Discover Local SQL Server			
+sub psqldiscloc{
+bpowerpick($1, "Get-SQLInstanceLocal -Verbose");
+}

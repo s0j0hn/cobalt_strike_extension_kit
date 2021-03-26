@@ -1,0 +1,34 @@
+include('/opt/csek/scripts/privesc/ptt.cna');
+include('/opt/csek/scripts/privesc/condelab.cna');
+include('/opt/csek/scripts/privesc/massdc.cna');
+include('/opt/csek/scripts/privesc/dazzleupcna');
+include('/opt/csek/scripts/privesc/sharpup.cna');
+include('/opt/csek/scripts/privesc/sweetpot.cna');
+include('/opt/csek/scripts/privesc/winpeas.cna');
+include('/opt/csek/scripts/privesc/certkatz.cna');
+item "                 ----- MimiKatz -----"{}
+include('/opt/csek/scripts/privesc/mimibckuppriv.cna');
+include('/opt/csek/scripts/privesc/mimidebug.cna');
+include('/opt/csek/scripts/privesc/mimidriver.cna');
+include('/opt/csek/scripts/privesc/mimisecpriv.cna');
+include('/opt/csek/scripts/privesc/mimitcbpriv.cna');
+include('/opt/csek/scripts/privesc/mimielvadmtok.cna');
+include('/opt/csek/scripts/privesc/mimielvdomadmtok.cna');
+include('/opt/csek/scripts/privesc/mimielventadmtok.cna');
+include('/opt/csek/scripts/privesc/mimielvsystok.cna');
+include('/opt/csek/scripts/privesc/mimiescpriv.cna');
+include('/opt/csek/scripts/privesc/monticket.cna');
+item "                ----- SpoolSystem -----"{}
+include('/opt/csek/scripts/privesc/spoolsysteminj.cna');
+include('/opt/csek/scripts/privesc/spoolsystemspwn.cna');
+item "                ----- UACBypasses -----"{}
+include('/opt/csek/scripts/privesc/uaceventvwr.cna');
+include('/opt/csek/scripts/privesc/uaccompdefaults.cna');
+include('/opt/csek/scripts/privesc/uacdiskclean.cna');
+include('/opt/csek/scripts/privesc/uacfodhelper.cna');
+include('/opt/csek/scripts/privesc/uacsdlctbypass.cna');
+include('/opt/csek/scripts/privesc/uacslui.cna');
+item "                 ----- WSUSpicious -----"{}
+include('/opt/csek/scripts/privesc/wsuscmd.cna');
+include('/opt/csek/scripts/privesc/wsusexe.cna');
+include('/opt/csek/scripts/privesc/wsustest.cna');

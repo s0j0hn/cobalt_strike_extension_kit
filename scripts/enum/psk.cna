@@ -1,0 +1,12 @@
+#PSK - Detailed list of the Windows Kernel and All Loaded Kernel Modules
+item "PSK - List of Windows Kernel and All Loaded Kernel Modules  - T1057"{
+	local ('$bid');
+		foreach $bid ($1){
+			getpsk($bid);
+		}
+	}
+	
+#PSK - Detailed list of the Windows Kernel and All Loaded Kernel Modules
+sub getpsk{
+fireAlias($1, "psk");
+}

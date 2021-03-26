@@ -1,0 +1,15 @@
+#Find Interesting Domain Shares 
+item "Find Interesting Domain Shares  - T1135"{
+	local('$bid');
+		foreach $bid ($1){
+			findinterestingdomainsharefile($bid);
+		}
+	}
+	
+	
+	
+	
+# SharpView Find Interesting Domain Shares
+sub findinterestingdomainsharefile{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Find-InterestingDomainShareFile");
+}	

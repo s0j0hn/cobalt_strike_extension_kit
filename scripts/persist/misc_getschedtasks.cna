@@ -1,0 +1,11 @@
+item "Misc: Get Scheduled Tasks  - T1053"{
+				local('$bid');
+				foreach $bid ($1){
+					binput($bid, "StayKit get scheduled tasks");
+					blog2($bid, "" . dstamp(ticks()) . " - Showing scheduled tasks via SharpStay");
+					bexecute_assembly!($bid, $sharppersist, "action=listtasknames");
+				}
+			}
+			
+			
+			

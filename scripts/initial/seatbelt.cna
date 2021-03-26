@@ -1,0 +1,12 @@
+#Seatbelt All
+item "Seatbelt (All and Full Enum Checks)  - T1082"{
+	local ('$bid');
+		foreach $bid ($1){
+			seatbeltall($bid);
+		}
+	}
+	
+#SeatBelt All Enum Checks
+sub seatbeltall{
+bexecute_assembly($1, script_resource('/exe/Seatbelt.exe'), "-group=all -full");
+}

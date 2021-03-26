@@ -1,0 +1,13 @@
+item "Rubeus - Kerberoast ADSI Recon - Best Opsec"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastadsi($bid);
+				}
+			}
+			
+			
+			
+sub kerberoastadsi{
+fireAlias($1, "Recon-AD-SPNs");
+}
+			

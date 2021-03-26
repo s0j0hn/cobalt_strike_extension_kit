@@ -1,0 +1,10 @@
+item "List Browser Cookies"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpchromecookies($bid);
+				}
+			}
+
+sub sharpchromecookies{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "cookies");
+}

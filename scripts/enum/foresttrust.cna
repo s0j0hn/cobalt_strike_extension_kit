@@ -1,0 +1,12 @@
+#Get Net Forest Trust
+		item "Enumerate Forest Trusts Of Current Domain  - T1482"{
+			local('$bid');
+				foreach $bid ($1){
+					getnetforesttrust($bid);
+					}
+				}
+
+# SharpView Get-NetForestTrust
+sub getnetforesttrust{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-NetForestTrust");
+}

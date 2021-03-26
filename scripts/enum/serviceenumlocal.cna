@@ -1,0 +1,13 @@
+# Enumerate Services
+item "Service Enumeration - Current Computer - T1046"{
+
+    local('$bid');
+        foreach $bid ($1){
+            serviceenumerationlocalhost($bid);
+      }
+   }
+
+
+sub serviceenumerationlocalhost{
+bexecute_assembly($1, script_resource('/exe/AtYourService.exe'));
+}

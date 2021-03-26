@@ -1,0 +1,10 @@
+item "Retrieve All Browsers' Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpweball($bid);
+				}
+			}
+			
+sub sharpweball{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "all");
+}			

@@ -1,0 +1,17 @@
+item "SpoolSystem Spawn"{
+
+			local('$bid');
+				foreach $bid ($1){
+					spoolspawn($bid);
+					}
+
+
+}
+
+
+
+#SpoolSystem Spawn
+sub spoolspawn{
+fireAlias($1, "spoolsystem", "spawn");
+}
+

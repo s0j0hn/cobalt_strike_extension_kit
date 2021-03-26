@@ -1,0 +1,40 @@
+item "Misc: New LNK"{
+				local('$bid');
+				foreach $bid ($1){
+					&newlnkdialog($bid);
+				}
+			}
+			
+			
+sub newlnkdialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "newlnk";
+
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+	%defaults["command"] = %persistdefaults["command"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	
+	$dialog = dialog("Misc: New LNK file", %defaults, lambda({
+		if($2 eq "Help"){
+			&miscnewlnkhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Misc: New LNK file");
+	drow_text($dialog, "filepath", "Lnk Path: ");
+	drow_text($dialog, "lnkname", "Lnk Name: ");
+	drow_text($dialog, "lnktarget", "Command: ");
+	drow_text($dialog, "lnkicon", "Lnk Icon: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template File: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", "Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}			

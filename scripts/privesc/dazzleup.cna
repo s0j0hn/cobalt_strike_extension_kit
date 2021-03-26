@@ -1,0 +1,23 @@
+#################################################
+
+# Run DazzleUp to find privilege Escalation
+
+#################################################
+
+item "Run DazzleUp to find privilege Escalation"{
+	local('$bid');
+		foreach $bid ($1){
+			dazzleup($bid);
+		}
+	}
+
+
+
+#################################################
+
+#   Run DazzleUp To escalate Privileges
+
+#################################################
+sub dazzleup{
+bdllspawn($1, script_resource("exe/dazzleUP_Reflective_DLL.dll"), $2, "dazzleUP", 5000, false);
+}

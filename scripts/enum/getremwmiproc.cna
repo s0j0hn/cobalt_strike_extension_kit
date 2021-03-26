@@ -1,0 +1,14 @@
+item "Get Remote Processes (WMI)  - T1057"{
+	local ('$bid');
+		foreach $bid ($1){
+			getremotewmiprocesses($bid);
+		}
+	}
+	
+	
+# SharpView Get-WMIProcesses Remote
+sub getremotewmiprocesses{
+prompt_text("Remote Machine - (FQDN)", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/SharpView.exe'), "Get-WMIProcess -ComputerName $1");
+}, $bids => $1));
+}

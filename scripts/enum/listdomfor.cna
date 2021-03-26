@@ -1,0 +1,26 @@
+#Get Net Forest
+		item "List Domains of Forest  - T1"{
+			local('$bid');
+				foreach $bid ($1){
+					getnetforest($bid);
+					}
+				}
+				
+#Get Net Forest Domain
+		item "Enumerate All Domains for The Current Forest  - T1482"{
+			local('$bid');
+				foreach $bid ($1){
+					getnetforestdomain($bid);
+					}
+				}		
+
+
+# SharpView Get-NetForest
+sub getnetforest{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-NetForest");
+}
+
+# SharpView Get-NetForestDomain
+sub getnetforestdomain{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-NetForestDomain");
+}

@@ -1,0 +1,21 @@
+#################################################
+
+#   Run Watson to find missing patches
+
+#################################################
+item "Run Watson to find missing patches  - T1082"{
+	local('$bid');
+		foreach $bid ($1){
+			escalateprivs($bid);
+		}
+	}
+
+
+#################################################
+
+#   Run Watson to find missing patches
+
+#################################################
+sub escalateprivs{
+bexecute_assembly($1, script_resource('/exe/Watson.exe'));
+}

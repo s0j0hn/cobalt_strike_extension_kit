@@ -1,0 +1,9 @@
+include('/opt/csek/scripts/defev/edrcheck.cna');
+include('/opt/csek/scripts/defev/avquery.cna');
+item "                 ----- MimiKatz Process Manipulation -----"{}
+include('/opt/csek/scripts/defev/mimiprocmanip.cna');
+include('/opt/csek/scripts/defev/blocketw.cna');
+item "                 ----- CleanMRU -----"{}
+include('/opt/csek/scripts/defev/cleanmru.cna');
+item "                 ----- ShhMon -----"{}
+include('/opt/csek/scripts/defev/shhmon.cna');

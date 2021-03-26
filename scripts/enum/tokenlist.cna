@@ -1,0 +1,13 @@
+#List All Tokens
+
+item "List Tokens"{
+	local('$bid');
+		foreach $bid ($1){
+			tokenlist($bid);
+		}
+	}
+	
+# Mimikatz List Tokens
+sub tokenlist{
+bmimikatz($1, "token::list");
+}

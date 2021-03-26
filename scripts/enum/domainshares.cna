@@ -1,0 +1,12 @@
+#Find Domain Share
+item "Find Domain Shares  - T1135"{
+	local('$bid');
+		foreach $bid ($1){
+			finddomainshare($bid);
+		}
+	}
+	
+# SharpView Find Domain Share
+sub finddomainshare{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Find-DomainShare");
+}	

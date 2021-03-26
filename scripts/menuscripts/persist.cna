@@ -1,0 +1,29 @@
+include('/opt/csek/scripts/persist/setup_update.cna');
+include('/opt/csek/scripts/persist/sharptask.cna');
+item "                 ----- Elevated -----"{}
+
+include('/opt/csek/scripts/persist/elev_wmiregkey.cna');
+include('/opt/csek/scripts/persist/elev_regkey.cna');
+include('/opt/csek/scripts/persist/elev_userintregkey.cna');
+include('/opt/csek/scripts/persist/elev_schedtask.cna');
+include('/opt/csek/scripts/persist/elev_createservice.cna');
+include('/opt/csek/scripts/persist/elev_wmieventsub.cna');
+
+item "                 ----- Non-Elevated -----"{}
+
+include('/opt/csek/scripts/persist/nonelev_wmiregkey.cna');
+include('/opt/csek/scripts/persist/nonelev_userintrlogonkey.cna');
+include('/opt/csek/scripts/persist/nonelev_schedtask.cna');
+include('/opt/csek/scripts/persist/nonelev_schedtaskcomhijack.cna');
+include('/opt/csek/scripts/persist/nonelev_junctfold.cna');
+
+item "                 ----- Misc -----"{}
+
+include('/opt/csek/scripts/persist/misc_addactschedtask.cna');
+include('/opt/csek/scripts/persist/misc_replacebinfile.cna');
+include('/opt/csek/scripts/persist/misc_startupfold.cna');
+include('/opt/csek/scripts/persist/misc_newlnk.cna');
+include('/opt/csek/scripts/persist/misc_backdoorlnk.cna');
+include('/opt/csek/scripts/persist/misc_getrunserv.cna');
+include('/opt/csek/scripts/persist/misc_getschedtasks.cna');
+include('/opt/csek/scripts/persist/misc_getschedtaskcomhandler.cna');

