@@ -24,12 +24,12 @@ include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomtrust.cna');
 
 }
 
-menu "Domain User Enumeration"{}
+menu "Domain User Enumeration"{
 
 include('/opt/cobalt_strike_extension_kit/scripts/enum/localadmin.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocmachname.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocusername.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocmachuser.cna');
+}
 
 item "                 ----- Domain Computer Object Enumeration -----"{}
 
