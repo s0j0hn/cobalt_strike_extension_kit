@@ -1,0 +1,11 @@
+item "List Delegation Attributes in Domain"{
+
+    local('$bid');
+        foreach $bid ($1){
+            listdelegation($bid);
+      }
+   }  #End Item
+
+sub listdelegation{
+bexecute_assembly($1, script_resource('/exe/StandIn.exe'), "--delegation");
+}

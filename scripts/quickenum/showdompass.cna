@@ -1,0 +1,6 @@
+item "Show Domain Password Policy"{
+        prompt_text("Enter Domain Name", "", lambda({
+                    bexecute_assembly($bids, script_resource('/exe/ldaputility.exe'), "DumpPasswordPolicy $1");                
+                }, $bids => $1));
+			}
+		

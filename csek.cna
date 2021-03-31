@@ -38,11 +38,17 @@ include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/favorites.cna')
 
 #################################################
 
-#   Define SubMenus and Direct to subscripts
+#   Define QuickEnum and Direct to subscripts
 
 #################################################
 
+popup beacon_top{
+menu "csek - Quick Enum" {
 
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/quickenum.cna')
+
+}
+}
 
 #################################################
 

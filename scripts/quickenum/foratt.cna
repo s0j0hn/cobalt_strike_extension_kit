@@ -1,0 +1,12 @@
+item "List Forest Attributes"{
+
+    local('$bid');
+        foreach $bid ($1){
+            listforestattributes($bid);
+      }
+   }  #End Item 
+  
+  
+sub listforestattributes{
+bexecute_assembly($1, script_resource('/exe/TruffleSnout.exe'), "forest -a -n current");
+}

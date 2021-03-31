@@ -1,0 +1,12 @@
+item "List Domain Administrators"{
+
+    local('$bid');
+        foreach $bid ($1){
+            listdomainadministrators($bid);
+      }
+   }  #End Item   
+
+
+sub listdomainadministrators{
+bexecute_assembly($1, script_resource('/exe/StandIn.exe'), '--group "Domain Admins"');
+}

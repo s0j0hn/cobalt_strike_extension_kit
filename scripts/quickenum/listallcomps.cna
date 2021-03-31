@@ -1,0 +1,5 @@
+item "List All Computers in Domain"{
+        prompt_text("Enter Domain Name", "", lambda({
+                    bexecute_assembly($bids, script_resource('/exe/ldaputility.exe'), "DumpAllComputers $1");                
+                }, $bids => $1));
+			}

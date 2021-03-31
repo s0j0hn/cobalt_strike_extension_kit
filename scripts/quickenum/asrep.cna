@@ -1,0 +1,11 @@
+item "List AS Rep Roastable Users"{
+
+    local('$bid');
+        foreach $bid ($1){
+            listASrepRoastableUsers($bid);
+      }
+   }  #End Item  
+  
+sub listASrepRoastableUsers{
+bexecute_assembly($1, script_resource('/exe/StandIn.exe'), "--asrep");
+}

@@ -6,6 +6,15 @@ include('/opt/cobalt_strike_extension_kit/scripts/privesc/sharpup.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/privesc/sweetpot.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/privesc/winpeas.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/privesc/certkatz.cna');
+item "                 ----- Find Local Admin Access -----"{}
+menu "Local Admin Access"{
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsneaky.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmloud.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsharesneaky.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsharesneakyish.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmshareloud.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsniper.cna');
+}
 item "                 ----- MimiKatz -----"{}
 include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimibckuppriv.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimidebug.cna');

@@ -1,3 +1,5 @@
+item "                 ----- Local System Enumeration -----"{}
+
 include('/opt/cobalt_strike_extension_kit/scripts/enum/scout.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/seatbelt.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/sitrep.cna');
@@ -12,51 +14,6 @@ include('/opt/cobalt_strike_extension_kit/scripts/enum/psx.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/psm.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/psw.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/psk.cna');
-
-menu "Domain Enumeration"{
-
-include('/opt/cobalt_strike_extension_kit/scripts/enum/foresttrust.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listadmins.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomain.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomainsid.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomfor.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomtrust.cna');
-
-}
-
-menu "Domain User Enumeration"{
-
-include('/opt/cobalt_strike_extension_kit/scripts/enum/localadmin.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocmachname.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocusername.cna');
-}
-
-item "                 ----- Domain Computer Object Enumeration -----"{}
-
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listcomps.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listcompsdom.cna');
-
-item "                 ----- Domain Group Enumeration -----"{}
-
-include('/opt/cobalt_strike_extension_kit/scripts/enum/listgroups.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/entadmingroup.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/domadmingroup.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/admingroup.cna');
-
-item "                 ----- ADSearch -----"{}
-
-include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistgroups.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistusers.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistspns.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistdomadm.cna');
-
-item "                 ----- Remote WMI Enumeration -----"{}
-
-include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteproc.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteserv.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteav.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteavaltcreds.cna');
-include('/opt/cobalt_strike_extension_kit/scripts/enum/wmilogonevents.cna');
 
 menu "File And Share Enumeration"{
 
@@ -106,6 +63,78 @@ include('/opt/cobalt_strike_extension_kit/scripts/enum/getremwmiproc.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/serviceenumlocal.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/serviceenumremote.cna');
 
+menu "Local Admin Access"{
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsneaky.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmloud.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsharesneaky.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsharesneakyish.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmshareloud.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsniper.cna');
+}
+
+item "                 ----- Domain Enumeration -----"{}
+
+menu "SharpHound"{
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundall.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundalldn.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundalldc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundstealthenc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundlow.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundlowstealth.cna');
+}
+
+menu "Domain Enumeration"{
+
+include('/opt/cobalt_strike_extension_kit/scripts/enum/foresttrust.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listadmins.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomain.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomainsid.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomfor.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listdomtrust.cna');
+
+}
+
+
+menu "Domain User Enumeration"{
+
+include('/opt/cobalt_strike_extension_kit/scripts/enum/localadmin.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocmachname.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/userlocusername.cna');
+
+}
+
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listcomps.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listcompsdom.cna');
+
+item "                 ----- Domain Group Enumeration -----"{}
+
+include('/opt/cobalt_strike_extension_kit/scripts/enum/listgroups.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/entadmingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/domadmingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/admingroup.cna');
+
+item "                 ----- ADSearch -----"{}
+
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistgroups.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistusers.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistspns.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/adslistdomadm.cna');
+
+item "                 ----- Remote WMI Enumeration -----"{}
+
+menu "Remote WMI Enumeration" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteproc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteserv.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteav.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmiremoteavaltcreds.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/wmilogonevents.cna');
+
+}
+
+
+item "                 ----- PowerUpSQL -----"{}
+
 menu "PowerUpSQL"{
 
 include('/opt/cobalt_strike_extension_kit/scripts/enum/initpowerupsql.cna');
@@ -116,3 +145,5 @@ include('/opt/cobalt_strike_extension_kit/scripts/enum/enumdatabaselinks.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/remservlinks.cna');
 
 }
+
+

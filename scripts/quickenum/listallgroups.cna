@@ -1,0 +1,5 @@
+item "List All Groups in Domain"{
+        prompt_text("Enter Domain Name", "", lambda({
+                    bexecute_assembly($bids, script_resource('/exe/ldaputility.exe'), "DumpAllGroups $1");                
+                }, $bids => $1));
+			}

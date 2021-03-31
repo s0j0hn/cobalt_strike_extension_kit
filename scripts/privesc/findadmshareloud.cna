@@ -1,0 +1,11 @@
+item "Find Admin and Share Access - LOUD  - T1033"{
+            local('$bid');
+                foreach $bid ($1){
+                    loudshare($bid);
+                }
+            }
+
+
+sub loudshare{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Find-LocalAdminAccess -CheckShareAccess");
+}

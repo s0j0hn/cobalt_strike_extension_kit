@@ -1,3 +1,4 @@
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/lapspass.cna');
 include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/sharpdump.cna');
 include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/dumpert.cna');
 item "-----CloneVault-----"{}
@@ -14,7 +15,7 @@ include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerbadmin.cna'
 include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerbadsi.cna');
 include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerboldpass.cna');
 include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_kerbsingleuser.cna');
-include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_aspreproast.cna');
+include ('/opt/cobalt_strike_extension_kit/scripts/credaccess/rub_asreproast.cna');
 
 item "-----Mimikatz-----"{}
 menu "Mimikatz"{

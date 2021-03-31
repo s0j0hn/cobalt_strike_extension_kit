@@ -1,0 +1,22 @@
+item "SharpHound All by Domain Controller"{
+local('$bid');
+foreach $bid ($1){
+sharphoundspecifydomaincontroller($bid);
+		}
+	} #End Item 
+
+sub sharphoundspecifydomaincontroller{
+    $bid = $1;
+    $dialog = dialog("SharpHound Everything by Domain Controller", %(domaincontroller => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "--CollectionMethod All --CollectAllProperties --DomainController $3['domaincontroller'] --nosavecache --RandomizeFileNames";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Collecting All Properties Based on Domain Controller');
+            bexecute_assembly($bid, script_resource('/exe/SharpHound.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "BloodHound Collect Properties by Domain Controller");
+    drow_text($dialog, "domaincontroller",  "Please Enter the Domain Controller:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+}

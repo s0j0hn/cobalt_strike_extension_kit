@@ -1,0 +1,5 @@
+item "Show Managed Objects"{
+        prompt_text("Enter Domain Name", "", lambda({
+                    bexecute_assembly($bids, script_resource('/exe/ldaputility.exe'), "CheckManaged $1");                
+                }, $bids => $1));
+			}
