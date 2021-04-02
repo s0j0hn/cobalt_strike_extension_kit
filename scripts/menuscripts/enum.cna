@@ -112,6 +112,7 @@ include('/opt/cobalt_strike_extension_kit/scripts/enum/listgroups.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/entadmingroup.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/domadmingroup.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/enum/admingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listusersingroup.cna');
 
 item "                 ----- ADSearch -----"{}
 

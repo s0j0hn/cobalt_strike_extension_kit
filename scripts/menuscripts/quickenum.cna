@@ -10,6 +10,7 @@ include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listdel.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listallcomps.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listallusers.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listallgroups.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listusersingroup.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/showdompass.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/showmanobj.cna');
 menu "SharpHound"{
