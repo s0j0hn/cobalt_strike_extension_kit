@@ -1,0 +1,15 @@
+item "WSuspicious - WSUS Test (Will Drop File)"{
+
+			local('$bid');
+				foreach $bid ($1){
+					wsustest($bid);
+				}
+
+
+}
+
+
+sub wsustest{
+bexecute_assembly($1, script_resource('/exe/WSuspicious.exe'));
+}
+

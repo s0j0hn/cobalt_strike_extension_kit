@@ -1,0 +1,27 @@
+########################
+#Find Shares - Specify DC & Domain
+########################
+item "Snaffler - Display All Available Shares Based On DC And Domain - T1135"{
+
+    local('$bid');
+        foreach $bid ($1){
+            finddomaincontrolleranddomainshares($bid);
+      }
+   }
+   
+   
+sub finddomaincontrolleranddomainshares{
+    $bid = $1;
+    $dialog = dialog("Show Domain and DC Shares", %(dom => "", dc => "", execmethod => "Execute-Assembly"), lambda({
+       $cmdargs = "";
+		$cmdargs = "-d $3['dom'] -c $3['dc']";
+        if ($3["execmethod"] eq "Execute-Assembly"){         
+            bexecute_assembly($bid, script_resource('/exe/Snaffler.exe'), '-s -i -j 75 '.$cmdargs.''" -v data");
+        }
+    }));
+    dialog_description($dialog, "Show Domain and DC Shares");
+    drow_text($dialog, "dom",  "Please Enter Domain");
+    drow_text($dialog, "dc",  "Please Enter DC FQDN");
+    dbutton_action($dialog, "Run");
+	dialog_show($dialog);
+}

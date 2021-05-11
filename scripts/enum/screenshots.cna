@@ -1,0 +1,26 @@
+item "Screenshots"{
+	local('$bid');
+		foreach $bid ($1){
+			screenshots($bid);
+		}
+	}
+	
+
+sub screenshots{
+ $bid = $1;
+    $dialog = dialog("Screenshots", %(pid => "", arc => "", time => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "$3['pid'] $3['arc'] $3['time']";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Taking Screenshots....');
+            bscreenshot($bid, $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Take Screenshots");
+    drow_text($dialog, "pid",  "Please Enter A Process ID:");
+    drow_combobox($dialog, "arc",  "Please Select The Proper Architecture:", @("x64", "x86"));
+    drow_text($dialog, "time",  "How Many Seconds Would You Like To Take Screenshots?:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}

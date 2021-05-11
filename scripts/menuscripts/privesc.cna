@@ -1,0 +1,43 @@
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/ptt.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/condelab.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/massdc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/dazzleupcna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/sharpup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/sweetpot.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/winpeas.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/certkatz.cna');
+item "                 ----- Find Local Admin Access -----"{}
+menu "Local Admin Access"{
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsneaky.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmloud.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsharesneaky.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsharesneakyish.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmshareloud.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/enum/findadmsniper.cna');
+}
+item "                 ----- MimiKatz -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimibckuppriv.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimidebug.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimidriver.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimisecpriv.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimitcbpriv.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimielvadmtok.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimielvdomadmtok.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimielventadmtok.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimielvsystok.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/mimiescpriv.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/monticket.cna');
+item "                ----- SpoolSystem -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/spoolsysteminj.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/spoolsystemspwn.cna');
+item "                ----- UACBypasses -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/uaceventvwr.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/uaccompdefaults.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/uacdiskclean.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/uacfodhelper.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/uacsdlctbypass.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/uacslui.cna');
+item "                 ----- WSUSpicious -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/wsuscmd.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/wsusexe.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/privesc/wsustest.cna');

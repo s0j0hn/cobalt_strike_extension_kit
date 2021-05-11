@@ -1,0 +1,14 @@
+#Find File Servers 
+item "Find File Servers  - T1083"{
+	local('$bid');
+		foreach $bid ($1){
+			getnetfileserver($bid);
+		}
+	}
+	
+	
+# SharpView Find File Servers
+sub getnetfileserver{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-NetFileServer");
+}
+

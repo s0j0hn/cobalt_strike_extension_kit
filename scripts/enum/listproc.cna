@@ -1,0 +1,13 @@
+item "Mimikatz List Processes  - T1057"{
+	local ('$bid');
+		foreach $bid ($1){
+			mimilistprocesses($bid);
+		}
+	}
+
+
+#Mimikatz List Process
+sub mimilistprocesses{
+bmimikatz($1, "process::list");
+}
+

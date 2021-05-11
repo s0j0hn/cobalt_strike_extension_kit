@@ -1,0 +1,13 @@
+item "SharpHound All With Encrypted Zip"{
+local('$bid');
+foreach $bid ($1){
+sharphoundallencryptedzip($bid);
+		}
+	} #End Item 
+	
+
+sub sharphoundallencryptedzip{
+$bid = $1;
+bexecute_assembly($1, script_resource('/exe/SharpHound.exe'), "--CollectionMethod All --CollectAllProperties --nosavecache --EncryptZip Bl00DhounD0gg1234 --RandomizeFileNames");
+btask($bid, 'Collecting All Properties with zip password of Bl00DhounD0gg1234');
+}

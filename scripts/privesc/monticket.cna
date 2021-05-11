@@ -1,0 +1,12 @@
+item "Monitor Tickets/Spooler Exploit"{
+
+			local('$bid');
+				foreach $bid ($1){
+					monitor_tickets($bid);
+					abuse_spooler($bid);
+				}
+
+
+}
+
+

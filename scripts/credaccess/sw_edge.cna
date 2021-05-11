@@ -1,0 +1,11 @@
+item "Retrieve Edge Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpwebedge($bid);
+				}
+			}
+			
+####SharpWeb Edge
+sub sharpwebedge{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "edge");
+}			

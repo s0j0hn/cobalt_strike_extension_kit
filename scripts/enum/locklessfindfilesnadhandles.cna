@@ -1,0 +1,12 @@
+item "Find All Locked Files And Process Handles - T1135"{
+    local('$bid');
+        foreach $bid ($1){
+            locklessall($bid);
+      }
+   }
+
+
+#Find All Locked Files And Process Handles 
+sub locklessall{
+bexecute_assembly($1, script_resource('/exe/LockLess.exe'), "all");
+}

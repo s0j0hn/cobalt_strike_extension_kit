@@ -1,0 +1,12 @@
+item "Export Credentials"{
+	local('$bid');
+		foreach $bid ($1){
+			exportcred($bid);
+		}
+	}
+
+sub exportcred{
+prompt_text("Enter Application Name: ", "", lambda({
+bexecute_assembly($bids, script_resource("/exe/CloneVault.exe"), "$1");
+}, $bids => $1));
+}

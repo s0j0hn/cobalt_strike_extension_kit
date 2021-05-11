@@ -1,0 +1,12 @@
+#PSW - Shows Window Titles from process with active Windows
+item "PSW - Active Window Processes  - T1057"{
+	local ('$bid');
+		foreach $bid ($1){
+			getpsw($bid);
+		}
+	}
+	
+#PSW - Shows Window Titles from process with active Windows
+sub getpsw{
+fireAlias($1, "psw");
+}

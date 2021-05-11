@@ -1,0 +1,12 @@
+		item "List Groups in Domain"{
+			local('$bid');
+				foreach $bid ($1){
+					getnetgroup($bid);
+				}
+			}
+
+
+#SharpView list Groups
+sub getnetgroup{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), 'Get-NetGroup');
+}

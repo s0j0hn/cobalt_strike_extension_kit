@@ -1,0 +1,16 @@
+#Find User Location By Machine Name
+					
+item "Find User Location By Machine Name  - T1033"{
+	local('$bid');
+		foreach $bid ($1){
+			finduserlocationmachine($bid);
+		}
+	}
+
+
+# SharpView Find User Locations By Machine Name
+sub finduserlocationmachine{
+prompt_text("Machine Name - (FQDN)", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/SharpView.exe'), "Find-DomainUserLocation -ComputerName $1");
+}, $bids => $1));
+}

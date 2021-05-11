@@ -1,0 +1,23 @@
+item "SharpHound All by Domain Name"{
+local('$bid');
+foreach $bid ($1){
+sharphoundspecifydomain($bid);
+		}
+	} #End Item 
+
+
+sub sharphoundspecifydomain{
+    $bid = $1;
+    $dialog = dialog("SharpHound Everything by Domain", %(domain => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "--CollectionMethod All --CollectAllProperties --Domain $3['domain'] --nosavecache --RandomizeFileNames";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Collecting All Properties Based on Domain');
+            bexecute_assembly($bid, script_resource('/exe/SharpHound.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "BloodHound Collect Properties by Domain Name");
+    drow_text($dialog, "domain",  "Please Enter the Domain Name to Enumerate:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+}

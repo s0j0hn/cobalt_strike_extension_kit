@@ -1,0 +1,24 @@
+item "Find Process Handles For Specific File - T1135"{
+    local('$bid');
+        foreach $bid ($1){
+            locklessfindproc($bid);
+      }
+   }   
+   
+
+sub locklessfindproc{
+ $bid = $1;
+    $dialog = dialog("LockLess: Find Which Process Has Handle On File", %(file => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "$3['file']";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Finding Process Handle....');
+            bexecute_assembly($bid, script_resource('exe/LockLess.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Find Which Process Has Handle On File");
+    drow_text($dialog, "file",  "Please Enter A FileName:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}

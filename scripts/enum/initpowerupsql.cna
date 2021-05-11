@@ -1,0 +1,12 @@
+item "Initialize PowerUpSQL (DO THIS FIRST)"{
+		local('$bid');
+				foreach $bid ($1){
+					psqlinit($bid);
+				}
+			}
+
+
+#PowerUpSQL Initialize			
+sub psqlinit{
+bpowershell_import($1, script_resource("/scripts/subscripts/powerupsql/PowerUpSQL.ps1"));
+}

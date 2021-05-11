@@ -1,0 +1,12 @@
+item "List Domain Controllers"{
+
+    local('$bid');
+        foreach $bid ($1){
+            listdomaincontrollers($bid);
+      }
+   }  #End Item 
+   
+
+sub listdomaincontrollers{
+bexecute_assembly($1, script_resource('/exe/StandIn.exe'), "--dc");
+}

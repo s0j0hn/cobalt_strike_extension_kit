@@ -1,0 +1,23 @@
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/runad.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/runset.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/foratt.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/domatt.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/domcont.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/domadms.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/asrep.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listspn.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listdel.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listallcomps.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listallusers.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listallgroups.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/listusersingroup.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/showdompass.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/showmanobj.cna');
+menu "SharpHound"{
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundall.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundalldn.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundalldc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundstealthenc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundlow.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundlowstealth.cna');
+}

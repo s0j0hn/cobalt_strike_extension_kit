@@ -1,0 +1,10 @@
+item "Misc: Get Scheduled Task ComHandler  - T1053"{
+				local('$bid');
+				foreach $bid ($1){
+					binput($bid, "StayKit get scheduled tasks com handlers");
+					blog2($bid, "" . dstamp(ticks()) . " - Showing Scheduled tasks with COM handlers via SharpStay");
+					bexecute_assembly!($bid, $sharppersist, "action=GetScheduledTaskComHandler");
+				}
+			}
+			
+			

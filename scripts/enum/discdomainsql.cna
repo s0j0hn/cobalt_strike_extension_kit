@@ -1,0 +1,13 @@
+#PowerUpSQL Discover Domain SQL Servers
+item "Discover Domain SQL Server Instances"{
+		local('$bid');
+				foreach $bid ($1){
+					psqldiscdom($bid);
+				}
+			}
+
+
+#PowerUpSQL Discover Domain SQL Servers
+sub psqldiscdom{
+bpowerpick($1, "Get-SQLInstanceDomain");
+}

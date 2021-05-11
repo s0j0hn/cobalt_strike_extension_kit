@@ -1,0 +1,10 @@
+item "Export All Credentials"{
+	local('$bid');
+		foreach $bid ($1){
+			exportallcreds($bid);
+		}
+	}
+	
+sub exportallcreds{
+bexecute_assembly($1, script_resource("/exe/CloneVault.exe"), "exportAll");
+}

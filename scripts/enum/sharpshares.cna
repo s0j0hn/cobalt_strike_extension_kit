@@ -1,0 +1,11 @@
+item "Find Shares using SharpShares"{
+	local('$bid');
+		foreach $bid ($1){
+			sharpshares($bid);
+			}
+		}
+
+#SharpShares
+sub sharpshares{
+bexecute_assembly($1, script_resource('/exe/SharpShares.exe'), "shares");
+}

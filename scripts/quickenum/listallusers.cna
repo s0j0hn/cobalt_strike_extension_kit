@@ -1,0 +1,6 @@
+item "List All Users in Domain"{
+        prompt_text("Enter Domain Name", "", lambda({
+                    bexecute_assembly($bids, script_resource('/exe/ldaputility.exe'), "DumpAllUsers $1");                
+                }, $bids => $1));
+			}
+	

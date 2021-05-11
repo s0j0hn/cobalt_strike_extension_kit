@@ -1,0 +1,12 @@
+        item "Find Admin - Sniper Mode  - T1033"{
+            local('$bid');
+                foreach $bid ($1){
+                    snipeaccess($bid);
+                }
+            }
+
+sub snipeaccess{
+prompt_text("Computer Name - FQDN)", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/SharpView.exe'), "Find-LocalAdminAccess -Threads 1 -Jitter 1 -CheckShareAccess -ComputerName $1");
+}, $bids => $1));
+}

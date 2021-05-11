@@ -1,0 +1,13 @@
+item "Import Credential"{
+	local('$bid');
+		foreach $bid ($1){
+			importcred($bid);
+		}
+	}
+	
+	
+sub importcred{
+prompt_text("Enter JSON String: ", "", lambda({
+bexecute_assembly($bids, script_resource("/exe/CloneVault.exe"), "$1");
+}, $bids => $1));
+}

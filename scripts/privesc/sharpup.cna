@@ -1,0 +1,22 @@
+#################################################
+
+#   Run SharpUp to find Privilege Escalation
+
+#################################################
+item "Run SharpUp to find privilege escalation"{
+	local('$bid');
+		foreach $bid ($1){
+			sharpup($bid);
+		}
+	}
+
+
+
+#################################################
+
+#   Run SharpUp to find Privilege Escalation
+
+#################################################
+sub sharpup{
+bexecute_assembly($1, script_resource('/exe/SharpUp.exe'));
+}

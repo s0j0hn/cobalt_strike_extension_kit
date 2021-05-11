@@ -1,0 +1,13 @@
+#PowerUpSQL Discover Domain SQL Servers Information	
+item "Discover Domain SQL Server Information"{
+		local('$bid');
+				foreach $bid ($1){
+					psqldiscdominfo($bid);
+				}
+			}
+
+
+#PowerUpSQL Discover Domain SQL Servers Information		
+sub psqldiscdominfo{
+bpowerpick($1, "Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose");
+}

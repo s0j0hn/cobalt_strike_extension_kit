@@ -1,0 +1,42 @@
+item "Non-Elevated: Scheduled Task COM Handler Hijack  - T1053"{
+				local('$bid');
+				foreach $bid ($1){
+					&schtskcomhijackdialog($bid);
+				}
+			}
+			
+			
+			
+			
+sub schtskcomhijackdialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "schtaskcomhijack";
+
+	%defaults["clsid"] = %persistdefaults["clsid"];
+	%defaults["dllpath"] = %persistdefaults["dllpath"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+
+
+	$dialog = dialog("Non-Elevated: Scheduled Task COM Handler Hijack", %defaults, lambda({
+		if($2 eq "Help"){
+			&nonschtskcomhijackhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+	}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Non-Elevated: Scheduled Task COM Hijack Persistence");
+	drow_text($dialog, "clsid", "ClassID: ");
+	drow_text($dialog, "dllpath", "DLL Path: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", " Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}			

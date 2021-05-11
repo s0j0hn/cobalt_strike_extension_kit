@@ -1,0 +1,12 @@
+item "List Groups"{
+
+    local('$bid');
+        foreach $bid ($1){
+            adsearchlistgroups($bid);
+      }
+   }  #End Item 
+   
+   
+sub adsearchlistgroups{
+bexecute_assembly($1, script_resource('/exe/ADSearch.exe'), "--groups");
+}

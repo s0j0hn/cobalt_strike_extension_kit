@@ -1,0 +1,11 @@
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/sharptask.cna');
+item "                 ----- RDP HiJacking -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/qwinsta.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/mimirdp.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/hijacksys.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/hijack2cons.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/hijacksesspass.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/discrdp.cna');
+item "                 ----- LOLBins -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/latmove/forfile.cna');
+

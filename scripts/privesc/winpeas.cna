@@ -1,0 +1,22 @@
+#################################################
+
+#   Run WinPEAS to find Privilege Escalation
+
+#################################################
+item "Run WinPEAS to find privilege escalation"{
+	local('$bid');
+		foreach $bid ($1){
+			winpeas($bid);
+		}
+	}
+
+
+
+#################################################
+
+#   Run WinPEAS to find Privilege Escalation
+
+#################################################
+sub winpeas{
+bexecute_assembly($1, script_resource('/exe/winPEASany.exe'));
+}

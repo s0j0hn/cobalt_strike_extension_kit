@@ -29,68 +29,137 @@ foreach $file (@aggressor){
 #   Define Main Menu
 
 #################################################
-popup beacon_top {
-
-menu "Quick Enum" {
-
-include('/opt/cobalt_strike_extension_kit/scripts/quickenum.cna')
-
-} #End Menu
-
-} #End PopUp Beacon Top
-
 
 popup beacon_top {
 
-	menu "Extension Kit" {
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/favorites.cna')
+
+}
+
+#################################################
+
+#   Define QuickEnum and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Quick Enum" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/quickenum.cna')
+
+}
+}
+
+#################################################
+
+#   Define Initial Access and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Initial Access" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/initialacc.cna')
+
+}
+}
+
+#################################################
+
+#   Define Enumeration and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Enumeration" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/enum.cna')
+
+}
+}
+
+#################################################
+
+#   Define Defense Evasion and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Defense Evasion" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/defev.cna')
+
+}
+}
 
 
 #################################################
 
-#   Define SubMenus and Direct to subscripts
+#   Define Code Execution and Direct to subscripts
 
 #################################################
 
-menu "Initial Access" {
+popup beacon_top{
+menu "csek - Code Execution" {
 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_initial.cna')
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/codeexec.cna')
+
+}
 }
 
-menu "Defense Evasion"{
+#################################################
 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_defev.cna')
+#   Define Lateral Movement and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Lateral Movement" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/latmove.cna')
+
+}
 }
 
-menu "Code Execution"{
+#################################################
 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_codexec.cna')
+#   Define Privilege Escalation and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Privilege Escalation" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/privesc.cna')
+
+}
 }
 
-menu "Persistence" {
- 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_persistence.cna') 
-} 
-	
-menu "Enumeration" {
+#################################################
 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_enum.cna')
+#   Define Credential Access and Direct to subscripts
+
+#################################################
+
+popup beacon_top{
+menu "csek - Credential Access" {
+
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/credaccess.cna')
+
+}
 }
 
-menu "Lateral Movement" {
 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_latmove.cna')
-}
+#################################################
 
+#   Define Persistence and Direct to subscripts
 
-menu "Privilege Escalation" {
- 
-include('/opt/cobalt_strike_extension_kit/scripts/csek_privesc.cna')
-}
+#################################################
 
-menu "Credential Access"{
-include('/opt/cobalt_strike_extension_kit/scripts/csek_credential-access.cna')
-}
+popup beacon_top{
+menu "csek - Persistence" {
 
+include('/opt/cobalt_strike_extension_kit/scripts/menuscripts/persist.cna')
 
 }
 }

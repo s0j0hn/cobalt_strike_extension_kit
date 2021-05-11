@@ -1,0 +1,39 @@
+item "Elevated: Registry Key"{
+				local('$bid');
+				foreach $bid ($1){
+					&elevatedregistrydialog($bid);
+				}
+			}
+			
+sub elevatedregistrydialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "elevatedregistrykey";
+
+	%defaults["regkeyname"]  = %persistdefaults["regkeyname"];
+	%defaults["command"] = %persistdefaults["command"];
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["template"] = %persistdefaults["template"];
+	
+	$dialog = dialog("Elevated: Registry Key Persistence", %defaults, lambda({
+		if($2 eq "Help"){
+			&eleregistryhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Elevated: Create new registry key");
+	drow_text($dialog, "regkeyname", "Key Name: ");
+	drow_text($dialog, "command", "Command: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template: ");
+	drow_combobox($dialog, "regkey", "Registry Key", @("HKLM:Software\\Microsoft\\Windows\\CurrentVersion\\Run", "HKLM:Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce"));
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", " Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}

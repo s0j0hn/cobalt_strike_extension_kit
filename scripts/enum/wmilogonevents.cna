@@ -1,0 +1,25 @@
+		item "List Logon Events for a User"{
+			local('$bid');
+				foreach $bid ($1){
+					querylogoneventsforuser($bid);
+				}
+			}
+
+sub querylogoneventsforuser{
+    $bid = $1;
+    $dialog = dialog("Query Logon Events for user", %(samaccountname => "", domaincontroller => "", username => "", password => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "Get-EventForUser $3['samaccountname'] $3['domaincontroller'] $3['username']" $3['password'];
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Querying Logon Events');
+            bexecute_assembly($bid, script_resource('/exe/WMIUtility.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Query Logon Events for User");
+    drow_text($dialog, "samaccountname",  "Please Enter the samaccountname:");
+    drow_text($dialog, "domaincontroller",  "Please Enter the Domain Controller:");
+    drow_text($dialog, "username",  "Please Enter a Username:");
+    drow_text($dialog, "password",  "Please Enter a Password:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+}

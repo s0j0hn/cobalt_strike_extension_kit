@@ -1,0 +1,17 @@
+item "WSuspicious - Run Command"{
+
+			local('$bid');
+				foreach $bid ($1){
+					wsuscmd($bid);
+					}
+
+
+}
+
+
+
+sub wsuscmd{
+prompt_text("Please Specify A Command: ", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/WSuspicious.exe'), "$/command $1");
+}, $bids => $1));
+}

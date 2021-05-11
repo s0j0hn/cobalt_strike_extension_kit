@@ -1,0 +1,14 @@
+#PowerUpSQL Enumerate Database Links		
+item "Enumerate Database Links"{
+		local('$bid');
+				foreach $bid ($1){
+					psqlfindrem($bid);
+				}
+			}
+			
+#PowerUpSQL Enumerate Database Links		
+sub psqlfindrem{
+prompt_text("Server Instance", "", lambda({
+bpowerpick($bids, "Get-SQLServerLink -Instance $1 -Verbose");
+}, $bids => $1));
+}	

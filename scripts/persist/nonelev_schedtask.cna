@@ -1,0 +1,49 @@
+item "Non-Elevated: Scheduled Task  - T1053"{
+				local('$bid');
+				foreach $bid ($1){
+					&scheduledtaskdialog($bid);
+				}
+			}
+			
+			
+			
+			
+sub scheduledtaskdialog{
+	local('$dialog %defaults $bid $runasuser');
+	$bid = $1;
+	$ptype = "scheduledtask";
+
+	%defaults["taskname"]  = %persistdefaults["taskname"];
+	%defaults["command"] = %persistdefaults["command"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+
+	$dialog = dialog("Elevated: Scheduled Task", %defaults, lambda({
+		if($2 eq "Help"){
+			&elescheduledtaskhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Elevated: Create a new scheduled task");
+	drow_text($dialog, "taskname", "Task Name: ");
+	drow_text($dialog, "command", "Command: ");
+	drow_text($dialog, "runasuser", "Run As: ");
+	drow_text($dialog, "logonuser", "Logon As: ");
+	drow_combobox($dialog, "triggertype", "Trigger Type", @("hourly", "daily", "weekly", "monthly", "idle", "logon", "boot"));
+	# Add folder option
+	drow_text($dialog, "author", "Author: ");
+	drow_text($dialog, "description", "Description: ");
+	drow_text($dialog, "rep", "Repetition: ");
+	drow_text($dialog, "attime", "At Time: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template File: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", " Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}			

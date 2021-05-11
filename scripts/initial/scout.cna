@@ -1,0 +1,16 @@
+#Scout
+item "Scout - T1082"{
+	local ('$bid');
+		foreach $bid ($1){
+			scout($bid);
+		}
+	}
+
+
+
+#Scout
+sub scout{ 
+prompt_text("Please Specify A Machine (Must Include FQDN)", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/scout.exe'), "$1");
+}, $bids => $1));
+}

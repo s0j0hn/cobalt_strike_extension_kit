@@ -1,0 +1,12 @@
+item "List SPN's in AD"{
+
+    local('$bid');
+        foreach $bid ($1){
+            listspn($bid);
+      }
+   } #End Item
+
+
+sub listspn{
+bexecute_assembly($1, script_resource('/exe/StandIn.exe'), "--spn");
+}

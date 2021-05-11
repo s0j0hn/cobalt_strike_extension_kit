@@ -1,0 +1,12 @@
+# Mimikatz System Environment Privilege
+item "System Environment Privilege  - T1003"{
+	local ('$bid');
+		foreach $bid ($1){
+			sysenv($bid);
+		}
+}
+
+#Mimikatz System Environment Privilege
+sub sysenv{
+bmimikatz($1, "privilege::sysenv");
+}

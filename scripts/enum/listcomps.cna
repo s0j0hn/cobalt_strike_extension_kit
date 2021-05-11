@@ -1,0 +1,14 @@
+#List computers in Domain
+					
+		item "List Computers  - T1018"{
+			local('$bid');
+				foreach $bid ($1){
+					getdomaincomputer($bid);
+				}
+			}
+
+
+# SharpView Get Domain Computers
+sub getdomaincomputer{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-DomainComputer");
+}

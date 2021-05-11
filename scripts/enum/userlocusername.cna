@@ -1,0 +1,15 @@
+#Find User Location by Username
+item "Find User Location by Username  - T1033"{
+	local('$bid');
+		foreach $bid ($1){
+			finduserlocationuser($bid);
+		}
+	}
+
+
+# SharpView Find User Locations by Username
+sub finduserlocationuser{
+prompt_text("Enter Username", "", lambda({
+bexecute_assembly($bids, script_resource('/exe/SharpView.exe'), "Find-DomainUserLocation -UserIdentity $1 -CheckAccess");
+}, $bids => $1));
+}

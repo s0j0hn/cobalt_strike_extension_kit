@@ -1,0 +1,39 @@
+item "Non-Elevated: Registry UserInitMprLogonScript Key"{
+				local('$bid');
+				foreach $bid ($1){
+					&registryuserinitmprlogondialog($bid);
+				}
+			}
+			
+			
+			
+			
+sub registryuserinitmprlogondialog{
+	local('$dialog %defaults $bid');
+	$bid = $1;
+	$ptype = "userinitmprlogonscriptkey";
+
+	%defaults["command"] = %persistdefaults["command"];
+	%defaults["customfile"] = %persistdefaults["customfile"];
+	%defaults["template"] = %persistdefaults["template"];
+	%defaults["listener"] = %persistdefaults["listener"];
+	%defaults["droplocation"] = %persistdefaults["droplocation"];
+
+	$dialog = dialog("Non-Elevated: Registry UserInitMprLogonScript Key Persistence", %defaults, lambda({
+		if($2 eq "Help"){
+			&nonregistryuserinitmprlogonhelp();
+			break;
+		}
+		&argbuilder($bid, $3, $ptype);
+		}, \$bid, \$3, \$ptype));
+	dialog_description($dialog, "Non-Elevated: Create a new registry UserInitMprLogonScript key");
+	drow_text($dialog, "command", "Command: ");
+	drow_text($dialog, "droplocation", "Drop Location: ");
+	drow_listener_stage($dialog, "listener", "Listener: ");
+	drow_file($dialog, "customfile", "Custom File: ");
+	drow_file($dialog, "template", "Template: ");
+	drow_checkbox($dialog, "cleanup", "Cleanup: ", " Cleanup Persistence");
+	dbutton_action($dialog, "Execute");
+	dbutton_action($dialog, "Help");
+	dialog_show($dialog);
+}

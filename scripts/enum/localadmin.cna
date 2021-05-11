@@ -1,0 +1,13 @@
+#List Admins in Domain
+					
+	item "List Admins in Domain  - T1087"{
+		local('$bid');
+			foreach $bid ($1){
+				getnetuseradmin($bid);
+			}
+		}
+
+# SharpView List Admin Users
+sub getnetuseradmin{
+bexecute_assembly($1, script_resource('/exe/SharpView.exe'), "Get-NetUser -AdminCount");
+}

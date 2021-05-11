@@ -1,0 +1,15 @@
+item "SpoolSystem Inject"{
+
+			local('$bid');
+				foreach $bid ($1){
+					spoolinj($bid);
+				}
+
+
+}
+
+
+#SpoolSystem Inject
+sub spoolinj{
+fireAlias($1, "spoolsystem", "inject");
+}

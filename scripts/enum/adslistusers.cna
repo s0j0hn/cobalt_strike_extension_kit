@@ -1,0 +1,12 @@
+item "List Users"{
+
+    local('$bid');
+        foreach $bid ($1){
+            adsearchlistusers($bid);
+      }
+   }  #End Item 
+
+
+sub adsearchlistusers{
+bexecute_assembly($1, script_resource('/exe/ADSearch.exe'), "--users");
+}

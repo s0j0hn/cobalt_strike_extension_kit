@@ -1,0 +1,17 @@
+########################
+#Find Shares - User Enumeration & Specify Domain
+########################
+item "Snaffler - Display All Available User Shares Based On Domain - T1135"{
+
+    local('$bid');
+        foreach $bid ($1){
+            finduserdomainshares($bid);
+      }
+   }
+   
+
+sub finduserdomainshares{
+prompt_text("Insert Domain Name", "", lambda({
+bexecute_assembly($bids, script_resource("/exe/Snaffler.exe"), "-s -u -j 75 -d $1 -v data");
+}, $bids => $1));
+}

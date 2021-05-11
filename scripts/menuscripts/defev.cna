@@ -1,0 +1,9 @@
+include('/opt/cobalt_strike_extension_kit/scripts/defev/edrcheck.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/avquery.cna');
+item "                 ----- MimiKatz Process Manipulation -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/defev/mimiprocmanip.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/defev/blocketw.cna');
+item "                 ----- CleanMRU -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/defev/cleanmru.cna');
+item "                 ----- ShhMon -----"{}
+include('/opt/cobalt_strike_extension_kit/scripts/defev/shhmon.cna');
