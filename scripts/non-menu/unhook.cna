@@ -10,7 +10,7 @@ alias unhook {
 
 	# read in the right BOF file
 	$handle = openf(script resource("/opt/cobalt_strike_extension_kit/bof/unhook.64.o));
-	#$handle = openf(script_resource("unhook. $+ $barch $+ .o"));
+	#$handle = openf(script_resource("/bof/unhook/unhook. $+ $barch $+ .o"));
 	$data   = readb($handle, -1);
 	closef($handle);
 
