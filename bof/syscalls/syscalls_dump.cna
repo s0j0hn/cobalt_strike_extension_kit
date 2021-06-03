@@ -15,7 +15,7 @@ alias static_syscalls_dump {
 	$barch  = barch($1);
 	
 	# read in the right BOF file
-	$handle = openf(script_resource("syscallsdump. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/syscallsdump. $+ $barch $+ .o"));
 	$data = readb($handle, -1);
 	closef($handle);
 
