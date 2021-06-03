@@ -15,7 +15,7 @@ alias syscalls_shinject {
 	$barch  = barch($1);
 	
 	# read in the right BOF file
-	$handle = openf(script_resource("syscallsinject. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/syscallsinject. $+ $barch $+ .o"));
 	$data = readb($handle, -1);
 	closef($handle);
 
@@ -41,7 +41,7 @@ alias syscalls_inject {
 	
 
 	# read in the right BOF file
-	$handle = openf(script_resource("syscallsinject. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/syscallsinject. $+ $barch $+ .o"));
 	$data = readb($handle, -1);
 	closef($handle);
 
