@@ -156,3 +156,4 @@ alias curl {
 	# execute it.
 	beacon_inline_execute($1, $data, "go", $args);
 }
+
