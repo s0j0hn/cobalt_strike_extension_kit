@@ -20,7 +20,7 @@ alias etw {
 		$barch  = barch($1);
 		
 		# read in the right BOF file
-		$handle = openf(script_resource("etw. $+ $barch $+ .o"));
+		$handle = openf(script_resource("/bof/syscalls/etw. $+ $barch $+ .o"));
 		$data   = readb($handle, -1);
 		closef($handle);
 
