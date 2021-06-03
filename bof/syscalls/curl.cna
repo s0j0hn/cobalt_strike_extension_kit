@@ -44,7 +44,7 @@ sub curl_dialog{
 			$proxy
 		);
         
-		$handle = openf(script_resource("curl. $+ $barch $+ .o"));
+		$handle = openf(script_resource("/bof/syscalls/curl. $+ $barch $+ .o"));
 		$data   = readb($handle, -1);
 		closef($handle);
 
@@ -85,7 +85,7 @@ alias curl {
 	$barch  = barch($1);
 	
 	# read in the right BOF file
-	$handle = openf(script_resource("curl. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/curl. $+ $barch $+ .o"));
 	$data   = readb($handle, -1);
 	closef($handle);
 
