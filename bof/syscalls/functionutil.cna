@@ -33,7 +33,7 @@ alias read_function {
 	$barch  = barch($1);
 	
 	# read in the right BOF file
-	$handle = openf(script_resource("functionutil. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/functionutil. $+ $barch $+ .o"));
 	$data   = readb($handle, -1);
 	closef($handle);
 
@@ -64,7 +64,7 @@ alias check_function {
 	$barch  = barch($1);
 	
 	# read in the right BOF file
-	$handle = openf(script_resource("functionutil. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/functionutil. $+ $barch $+ .o"));
 	$data   = readb($handle, -1);
 	closef($handle);
 
@@ -94,7 +94,7 @@ alias patch_function {
 	$barch  = barch($1);
 	
 	# read in the right BOF file
-	$handle = openf(script_resource("functionutil. $+ $barch $+ .o"));
+	$handle = openf(script_resource("/bof/syscalls/functionutil. $+ $barch $+ .o"));
 	$data   = readb($handle, -1);
 	closef($handle);
 
