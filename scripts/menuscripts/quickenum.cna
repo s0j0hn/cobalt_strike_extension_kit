@@ -17,6 +17,7 @@ menu "SharpHound"{
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundall.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundalldn.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundalldc.cna');
+include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundallskipdc.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundstealthenc.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundlow.cna');
 include('/opt/cobalt_strike_extension_kit/scripts/quickenum/sharphoundlowstealth.cna');

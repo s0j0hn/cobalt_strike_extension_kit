@@ -17,6 +17,29 @@ foreach $file (@aggressor){
 	println("   $file");
 }
 
+@bofaggressor =  ls('/opt/cobalt_strike_extension_kit/bof/syscalls');
+println("[+] Importing:");
+foreach $file (@bofaggressor){ 
+	include($file);
+	println("   $file");
+}
+
+@bofwmiaggressor =  ls('/opt/cobalt_strike_extension_kit/bof/wmisub');
+println("[+] Importing:");
+foreach $file (@bofwmiaggressor){ 
+	include($file);
+	println("   $file");
+}
+
+@bofuhaggressor =  ls('/opt/cobalt_strike_extension_kit/bof/unhook/');
+println("[+] Importing:");
+foreach $file (@bofuhaggressor){ 
+	include($file);
+	println("   $file");
+}
+
+
+
 
     ###################################		         		###################################
 #######################################		         		#######################################

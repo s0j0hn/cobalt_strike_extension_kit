@@ -1,4 +1,4 @@
-item "Find Files using SharpFiles - Not OPSEC"{
+item "Find Files using SharpFiles"{
 	local('$bid');
 		foreach $bid ($1){
 			sharpfiles($bid);

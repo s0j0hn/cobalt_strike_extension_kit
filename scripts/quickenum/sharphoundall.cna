@@ -7,5 +7,5 @@ item "SharpHound All"{
    }  #End Item 
 
 sub sharphoundloud{
-bexecute_assembly($1, script_resource('/exe/SharpHound.exe'), "--CollectionMethod All --CollectAllProperties --nosavecache --RandomizeFileNames");
+bexecute_assembly($1, script_resource('/exe/SharpHound.exe'), "--CollectionMethod All --CollectAllProperties --nosavecache --RandomizeFileNames --ExcludeDomainControllers");
 }

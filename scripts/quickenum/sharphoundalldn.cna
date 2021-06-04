@@ -10,7 +10,7 @@ sub sharphoundspecifydomain{
     $bid = $1;
     $dialog = dialog("SharpHound Everything by Domain", %(domain => "", execmethod => "Execute-Assembly"), lambda({
         $cmdargs = "";
-        $cmdargs = "--CollectionMethod All --CollectAllProperties --Domain $3['domain'] --nosavecache --RandomizeFileNames";
+        $cmdargs = "--CollectionMethod All --CollectAllProperties --Domain $3['domain'] --nosavecache --RandomizeFileNames --ExcludeDomainControllers";
         if ($3["execmethod"] eq "Execute-Assembly"){
             btask($bid, 'Collecting All Properties Based on Domain');
             bexecute_assembly($bid, script_resource('/exe/SharpHound.exe'), $cmdargs);
